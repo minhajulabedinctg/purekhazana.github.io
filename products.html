@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALL PRODUCTS | Pure Khazana</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">Pure Khazana</a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a class="active" href="products.html">পণ্যসমূহ</a>
+        <a href="about.html">আমাদের সম্পর্কে</a>
+        <a href="contact.html">যোগাযোগ</a>
+      </nav>
+
+      <button class="menu-btn" aria-label="Open menu" id="menuBtn">Menu</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="page-head">
+      <div>
+        <h1>ALL PRODUCTS</h1>
+        <p class="sub">খাঁটি খাবার, নিরাপদ জীবন — Pure Khazana</p>
+      </div>
+
+      <div class="toolbar">
+        <label class="field">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="পণ্যের নাম লিখুন..." />
+        </label>
+
+        <label class="field">
+          <span>Sort by</span>
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="bestselling">Best selling</option>
+            <option value="az">Alphabetically, A-Z</option>
+            <option value="za">Alphabetically, Z-A</option>
+            <option value="priceLow">Price, low to high</option>
+            <option value="priceHigh">Price, high to low</option>
+            <option value="dateOld">Date, old to new</option>
+            <option value="dateNew">Date, new to old</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section id="grid" class="grid"></section>
+
+    <p id="emptyState" class="empty" hidden>কোনো পণ্য পাওয়া যায়নি। অন্য কীওয়ার্ড দিয়ে চেষ্টা করুন।</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>© Pure Khazana</div>
+      <a class="btn" target="_blank" rel="noopener"
+         href="https://wa.me/8801309476030?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20Pure%20Khazana%20%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87">
+        WhatsApp Order
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
