@@ -29,45 +29,40 @@
 
     .section-title { text-align: center; margin: 30px 0 20px; font-size: 24px; font-weight: 700; color: #222; }
 
-    /* প্রোডক্ট গ্রিড - মূল ম্যাজিক এখানে */
+    /* প্রোডক্ট গ্রিড */
     .product-grid {
       display: grid;
       gap: 15px;
       padding: 0 15px;
       max-width: 1200px;
       margin: 0 auto;
-      /* মোবাইলে ডিফল্ট ২ কলাম */
       grid-template-columns: repeat(2, 1fr);
     }
 
-    /* পিসির জন্য (Desktop View) - ৪ কলাম */
+    /* পিসির জন্য ৪ কলাম */
     @media (min-width: 1024px) {
-      .product-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
+      .product-grid { grid-template-columns: repeat(4, 1fr); }
     }
 
-    /* প্রোডাক্ট কার্ড স্টাইল */
-    .product-card {
-      border: 1px solid #eee;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      transition: transform 0.2s ease;
-    }
+    .product-card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; background: #fff; display: flex; flex-direction: column; position: relative; transition: transform 0.2s ease; }
     .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    
     .product-card img { width: 100%; height: 160px; object-fit: contain; padding: 15px; background: #fdfdfd; }
     .product-info { padding: 12px; text-align: center; flex-grow: 1; }
     .product-info h3 { font-size: 14px; margin: 0 0 10px; height: 40px; overflow: hidden; color: #333; }
     .price { font-size: 16px; font-weight: 700; color: var(--primary); display: block; margin-bottom: 12px; }
-    
     .btn-buy { background: var(--primary); color: white; text-decoration: none; display: block; padding: 10px; border-radius: 8px; font-size: 14px; font-weight: 600; }
 
-    /* বটম নেভিগেশন ও অন্যান্য */
+    /* কন্টাক্ট ফরম সেকশন (Ghorer Bazar Style) */
+    .form-section { padding: 40px 15px; background: #f9fafb; margin-top: 40px; }
+    .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; border: 1px solid #eee; }
+    .form-container h3 { margin-bottom: 20px; color: var(--primary); text-align: center; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; font-size: 14px; margin-bottom: 5px; font-weight: 600; color: #555; }
+    .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: inherit; outline: none; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
+    .btn-submit { background: var(--orange); color: white; border: none; width: 100%; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; }
+
+    /* বটম নেভিগেশন */
     .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; border-top: 1px solid #eee; padding: 10px 0; z-index: 2000; }
     .nav-item { flex: 1; text-align: center; color: #666; text-decoration: none; font-size: 11px; }
     .nav-item i { display: block; font-size: 18px; margin-bottom: 3px; }
@@ -99,74 +94,40 @@
       <img src="assets/images/ghee-1kg.jpg" alt="Pure Ghee">
       <div class="product-info">
         <h3>Pure Ghee 1 KG</h3>
-        <span class="price">৳ </span>
+        <span class="price">৳ ১৬৫০</span>
         <a href="https://wa.me/8801309476030?text=I+want+to+order+Ghee+1kg" class="btn-buy">অর্ডার করুন</a>
       </div>
     </div>
-
     <div class="product-card">
-      <img src="assets/images/ghee-250g.jpg" alt="Pure Ghee">
-      <div class="product-info">
-        <h3>Pure Ghee 250 gm</h3>
-        <span class="price">৳ </span>
-        <a href="https://wa.me/8801309476030?text=I+want+to+order+Ghee+250g" class="btn-buy">অর্ডার করুন</a>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/black-seed-honey.jpg" alt="মধু">
+      <img src="assets/images/black-seed-honey.jpg" alt="Honey">
       <div class="product-info">
         <h3>কালোজিরা মধু ১ কেজি</h3>
-        <span class="price">৳ </span>
-        <a href="https://wa.me/8801309476030?text=কালোজিরা+মধু+১কেজি" class="btn-buy">অর্ডার করুন</a>
+        <span class="price">৳ ১২০০</span>
+        <a href="https://wa.me/8801309476030?text=I+want+to+order+BlackSeed+Honey" class="btn-buy">অর্ডার করুন</a>
       </div>
     </div>
+    </main>
 
-    <div class="product-card">
-      <img src="assets/images/boroi-honey.jpg" alt="মধু">
-      <div class="product-info">
-        <h3>বড়ই মধু ১ কেজি</h3>
-        <span class="price">৳ </span>
-        <a href="https://wa.me/8801309476030?text=বড়ই+মধু+১কেজি" class="btn-buy">অর্ডার করুন</a>
-      </div>
+  <section class="form-section">
+    <div class="form-container">
+      <h3>দ্রুত অর্ডার বা কোনো প্রশ্ন?</h3>
+      <form id="indexContactForm">
+        <div class="form-group">
+          <label>আপনার নাম</label>
+          <input type="text" id="custName" placeholder="নাম লিখুন" required>
+        </div>
+        <div class="form-group">
+          <label>মোবাইল নম্বর</label>
+          <input type="tel" id="custPhone" placeholder="017XXXXXXXX" required>
+        </div>
+        <div class="form-group">
+          <label>বার্তা (পণ্যের নাম ও ঠিকানা)</label>
+          <textarea id="custMsg" rows="4" placeholder="যেমন: ১ কেজি ঘি নিতে চাই, ঠিকানা: ..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">WhatsApp-এ পাঠান</button>
+      </form>
     </div>
-
-    <div class="product-card">
-      <img src="assets/images/khalisha-honey.jpg" alt="মধু">
-      <div class="product-info">
-        <h3>সুন্দরবনের খলিশা মধু ১ কেজি</h3>
-        <span class="price">৳ </span>
-        <a href="https://wa.me/8801309476030?text=খলিশা+মধু+১কেজি" class="btn-buy">অর্ডার করুন</a>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/lichu-honey.jpg" alt="মধু">
-      <div class="product-info">
-        <h3>লিচু ফুলের মধু ১ কেজি</h3>
-        <span class="price">৳ </span>
-        <a href="https://wa.me/8801309476030?text=লিচু+মধু+১কেজি" class="btn-buy">অর্ডার করুন</a>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/sunflower-honey.jpg" alt="মধু">
-      <div class="product-info">
-        <h3>সূর্যমূখী ফুলের মধু ১ কেজি</h3>
-        <span class="price">৳ </span>
-        <a href="https://wa.me/8801309476030?text=সূর্যমূখী+মধু+১কেজি" class="btn-buy">অর্ডার করুন</a>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/small-bee-honey.jpg" alt="মধু">
-      <div class="product-info">
-        <h3>ক্ষুদে মৌমাছির মধু ১ কেজি</h3>
-        <span class="price">৳ </span>
-        <a href="https://wa.me/8801309476030?text=ক্ষুদে+মৌমাছি+মধু+অর্ডার" class="btn-buy">অর্ডার করুন</a>
-      </div>
-    </div>
-  </main>
+  </section>
 
   <a href="https://wa.me/8801309476030" class="chat-bubble"><i class="fab fa-whatsapp"></i></a>
 
@@ -176,6 +137,18 @@
     <a href="about.html" class="nav-item"><i class="fa fa-info-circle"></i><span>আমাদের কথা</span></a>
     <a href="https://wa.me/8801309476030" class="nav-item"><i class="fab fa-whatsapp"></i><span>চ্যাট</span></a>
   </nav>
+
+  <script>
+    document.getElementById("indexContactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const phone = "8801309476030";
+      const name = document.getElementById("custName").value;
+      const tel = document.getElementById("custPhone").value;
+      const msg = document.getElementById("custMsg").value;
+      const text = `অর্ডার তথ্য:\nনাম: ${name}\nফোন: ${tel}\nবিস্তারিত: ${msg}`;
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
+    });
+  </script>
 
 </body>
 </html>
