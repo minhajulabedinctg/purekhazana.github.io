@@ -17,37 +17,32 @@
 
     body { font-family: 'Hind Siliguri', sans-serif; background: #fff; margin: 0; padding-bottom: 80px; line-height: 1.6; }
 
-    /* টপ বার ও হেডার */
     .top-bar { background: var(--vibrant-red); color: white; text-align: center; padding: 10px; font-size: 13px; font-weight: 600; }
     .top-bar a { color: #fff; text-decoration: none; border-bottom: 1px dashed #fff; }
 
     .site-header { padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
     .brand-logo { font-size: 20px; font-weight: 800; color: var(--primary); text-decoration: none; }
 
-    /* এবাউট সেকশন স্টাইল */
     .about-hero { background: var(--light-bg); padding: 50px 20px; text-align: center; border-bottom: 1px solid #eee; }
     .about-hero h1 { font-size: 28px; color: var(--primary); margin: 0; }
     .about-hero p { color: #666; font-size: 16px; margin-top: 10px; }
 
     .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
     
-    .feature-card { background: white; border: 1px solid #eee; padding: 20px; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
+    .feature-card { background: white; border: 1px solid #eee; padding: 20px; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px; }
     .feature-card i { font-size: 24px; color: var(--vibrant-red); margin-top: 5px; }
     .feature-content h3 { margin: 0 0 5px; font-size: 18px; color: #333; }
-    .feature-content p { margin: 0; color: #666; font-size: 14px; }
+    
+    /* ফেসবুক পোস্ট সেকশন */
+    .fb-post-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+    .fb-post-card { background: #f0f2f5; padding: 15px; border-radius: 12px; text-align: center; text-decoration: none; color: #1c1e21; border: 1px solid #ddd; transition: 0.3s; }
+    .fb-post-card:hover { background: #e4e6e9; transform: translateY(-3px); }
+    .fb-post-card i { font-size: 30px; color: #1877F2; margin-bottom: 10px; }
+    .fb-post-card span { display: block; font-weight: 600; font-size: 14px; }
 
-    /* কন্টাক্ট ইনফো */
     .contact-info-box { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
-    .contact-info-box h3 { margin-bottom: 15px; }
-    .contact-info-box p { margin: 5px 0; font-size: 16px; }
     .contact-info-box a { color: white; text-decoration: none; font-weight: 700; border-bottom: 1px dashed #fff; }
 
-    /* সোশ্যাল লিঙ্কস */
-    .social-section { text-align: center; margin-top: 40px; }
-    .social-icons { display: flex; justify-content: center; gap: 20px; margin-top: 15px; }
-    .social-icons a { font-size: 28px; transition: 0.3s; }
-
-    /* বটম নেভিগেশন */
     .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; border-top: 1px solid #eee; padding: 10px 0; z-index: 2000; }
     .nav-item { flex: 1; text-align: center; color: #666; text-decoration: none; font-size: 11px; }
     .nav-item.active { color: var(--vibrant-red); font-weight: 700; }
@@ -64,13 +59,11 @@
 
   <header class="site-header">
     <a href="index.html" class="brand-logo">PURE KHAZANA</a>
-    <div class="header-right">
-      <i class="fa fa-shopping-bag"></i>
-    </div>
+    <div class="header-right"><i class="fa fa-shopping-bag"></i></div>
   </header>
 
   <section class="about-hero">
-    <h1>আমাদের লক্ষ্য ও উদ্দেশ্য</h1>
+    <h1>আমাদের কথা</h1>
     <p>বিশুদ্ধতার সন্ধানে, আপনার পাশে সবসময়।</p>
   </section>
 
@@ -79,23 +72,25 @@
       <i class="fa fa-check-circle"></i>
       <div class="feature-content">
         <h3>১০০% বিশুদ্ধতার নিশ্চয়তা</h3>
-        <p>আমরা প্রতিটি পণ্য সরাসরি খামার এবং নির্ভরযোগ্য উৎস থেকে সংগ্রহ করি, যাতে আপনি পান সেরা মানের অর্গানিক খাবার।</p>
+        <p>আমরা সরাসরি খামার থেকে সংগৃহীত সেরা মানের অর্গানিক খাবার সরবরাহ করি।</p>
       </div>
     </div>
 
-    <div class="feature-card">
-      <i class="fa fa-shield-alt"></i>
-      <div class="feature-content">
-        <h3>কোন প্রকার ভেজাল নেই</h3>
-        <p>আমাদের পণ্যগুলোতে কোনো কৃত্রিম রঙ, সুগন্ধি বা প্রিজারভেটিভ ব্যবহার করা হয় না। স্বাস্থ্যই আমাদের প্রধান অগ্রাধিকার।</p>
-      </div>
-    </div>
-
-    <div class="feature-card">
-      <i class="fa fa-truck"></i>
-      <div class="feature-content">
-        <h3>দ্রুত ডেলিভারি</h3>
-        <p>অর্ডার করার পর আমরা স্বল্পতম সময়ের মধ্যে আপনার ঠিকানায় পণ্য পৌঁছে দিতে বদ্ধপরিকর।</p>
+    <div style="margin-top: 40px;">
+      <h3 style="text-align: center; color: var(--primary);">ফেসবুকে আমাদের কিছু আপডেট</h3>
+      <div class="fb-post-grid">
+        <a href="https://www.facebook.com/share/p/1EpKr1y5A6/" target="_blank" class="fb-post-card">
+          <i class="fab fa-facebook"></i>
+          <span>আমাদের রিসেন্ট পোস্ট ১</span>
+        </a>
+        <a href="https://www.facebook.com/share/p/1AiDYB2ZSK/" target="_blank" class="fb-post-card">
+          <i class="fab fa-facebook"></i>
+          <span>আমাদের রিসেন্ট পোস্ট ২</span>
+        </a>
+        <a href="https://www.facebook.com/share/1QfXGFiBeM/" target="_blank" class="fb-post-card">
+          <i class="fab fa-facebook"></i>
+          <span>আমাদের রিসেন্ট পোস্ট ৩</span>
+        </a>
       </div>
     </div>
 
@@ -103,16 +98,6 @@
       <h3>সরাসরি যোগাযোগ</h3>
       <p><i class="fa fa-phone"></i> ফোন: +8801309476030</p>
       <p><i class="fab fa-whatsapp"></i> হোয়াটসঅ্যাপ: <a href="https://wa.me/8801309476030">+8801309476030</a></p>
-      <p><i class="fa fa-envelope"></i> ইমেইল: purekhazana@gmail.com</p>
-    </div>
-
-    <div class="social-section">
-      <h3>আমাদের ফলো করুন</h3>
-      <div class="social-icons">
-        <a href="আপনার_ফেসবুক_লিঙ্ক" target="_blank" style="color: #1877F2;"><i class="fab fa-facebook"></i></a>
-        <a href="আপনার_ইউটিউব_লিঙ্ক" target="_blank" style="color: #FF0000;"><i class="fab fa-youtube"></i></a>
-        <a href="https://wa.me/8801309476030" target="_blank" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
-      </div>
     </div>
   </main>
 
