@@ -53,9 +53,24 @@
     
     .fb-custom-card:hover { transform: translateY(-5px); }
     
-    .fb-card-img { width: 100%; height: 200px; object-fit: cover; background: #f0f0f0; }
+    /* ছবির রেশিও ঠিক রাখার জন্য আপডেট */
+    .fb-card-img { 
+      width: 100%; 
+      height: 220px;           /* নির্দিষ্ট উচ্চতা */
+      object-fit: cover;       /* ছবি যেন ফেটে না যায় বা চ্যাপ্টা না হয় */
+      object-position: center;  /* ছবির মাঝখানের অংশ দেখাবে */
+      background: #f0f0f0; 
+    }
     
-    .fb-card-body { padding: 15px; text-align: center; }
+    .fb-card-body { 
+      padding: 15px; 
+      text-align: center; 
+      flex-grow: 1;            /* কার্ডের বডি যেন সমান থাকে */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
     .fb-card-body h4 { margin: 0 0 10px; font-size: 16px; color: #333; }
     .fb-card-body p { font-size: 13px; color: #666; margin-bottom: 15px; line-height: 1.4; }
     
@@ -113,7 +128,7 @@
       
       <div class="fb-feature-grid">
         <div class="fb-custom-card">
-          <img src="https://i.ibb.co.com/TxfvhPtp/image.jpg" alt="FB Update" class="fb-card-img">
+          <img src="https://i.ibb.co.com/TxfvhPtp/image.jpg" alt="Honey Update" class="fb-card-img">
           <div class="fb-card-body">
             <h4>খাঁটি মধুর কালেকশন</h4>
             <p>আমাদের নতুন চালানের সুন্দরবনের খলীশা ও গরান মধুর আপডেট দেখুন সরাসরি ফেসবুক পেজে।</p>
@@ -124,7 +139,7 @@
         </div>
 
         <div class="fb-custom-card">
-          <img src="https://i.ibb.co.com/8DNc9qqT/image.jpg" alt="FB Update" class="fb-card-img">
+          <img src="https://i.ibb.co.com/8DNc9qqT/image.jpg" alt="Ghee Update" class="fb-card-img">
           <div class="fb-card-body">
             <h4>গব্য ঘি তৈরির প্রক্রিয়া</h4>
             <p>কিভাবে একদম ঘরোয়া পরিবেশে আমাদের প্রিমিয়াম ঘি তৈরি করা হয় তার একঝলক দেখে নিন।</p>
@@ -135,7 +150,7 @@
         </div>
 
         <div class="fb-custom-card">
-          <img src="https://i.ibb.co.com/yn5CFDnJ/Carousel-04.gif" alt="FB Update" class="fb-card-img">
+          <img src="https://i.ibb.co.com/yn5CFDnJ/Carousel-04.gif" alt="Customer Review" class="fb-card-img">
           <div class="fb-card-body">
             <h4>গ্রাহকদের সন্তুষ্টি</h4>
             <p>আমাদের অর্গানিক পণ্য ব্যবহার করে কাস্টমাররা কি বলছেন? রিভিউগুলো পড়তে ক্লিক করুন।</p>
