@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>মান ও দায়বদ্ধতা | Pure Khazana</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h2>মান ও দায়বদ্ধতা</h2>
+</header>
+
+<div class="container">
+<p>পিউর খাজানা ভোক্তার নিরাপত্তা ও খাদ্যের মানকে সর্বোচ্চ গুরুত্ব দেয়। কাঁচামাল সংগ্রহ থেকে প্যাকেজিং পর্যন্ত প্রতিটি ধাপে সতর্কতা বজায় রাখা হয়।</p>
+</div>
+
+<footer>© Pure Khazana</footer>
+</body>
+</html>

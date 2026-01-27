@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>পণ্যসমূহ | Pure Khazana</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h2>Pure Khazana</h2>
+    <nav>
+        <a href="index.html">হোম</a>
+        <a href="products.html">পণ্যসমূহ</a>
+        <a href="contact.html">যোগাযোগ</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>আমাদের পণ্যসমূহ</h2>
+
+    <div class="products">
+        <div class="product-card">
+            <h3>Pure Honey</h3>
+            <p>বিশ্বস্ত উৎস থেকে সংগ্রহকৃত মধু।</p>
+            <a class="btn" href="https://wa.me/8801309476030">অর্ডার করুন</a>
+        </div>
+
+        <div class="product-card">
+            <h3>Pure Ghee</h3>
+            <p>পরিষ্কার প্রক্রিয়ায় প্রস্তুত ঘি।</p>
+            <a class="btn" href="https://wa.me/8801309476030">অর্ডার করুন</a>
+        </div>
+
+        <div class="product-card">
+            <h3>Pure Mustard Oil</h3>
+            <p>ঐতিহ্যবাহী পদ্ধতিতে প্রস্তুত সরিষার তেল।</p>
+            <a class="btn" href="https://wa.me/8801309476030">অর্ডার করুন</a>
+        </div>
+    </div>
+</div>
+
+<footer>© Pure Khazana</footer>
+</body>
+</html>
