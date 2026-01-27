@@ -1,1 +1,1 @@
-# purekhazana1.github.io
+# purekhazana.github.io
