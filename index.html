@@ -5,15 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pure Khazana | Home</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" style="background-color: #1f7a4d;">
     <div class="wrap header-inner">
-      <a class="brand" href="index.html">Pure Khazana</a>
+      <a class="brand" href="index.html" style="color: #fff;">Pure Khazana</a>
 
       <nav class="nav">
         <a class="active" href="index.html">Home</a>
-        <a href="products.html">পণ্যসমূহ</a>
+        
+        <div class="dropdown">
+          <a href="products.html" class="drop-btn">পণ্যসমূহ <small>▾</small></a>
+          <div class="dropdown-content">
+            <a href="#">পিউর হানি (মধু)</a>
+            <a href="#">পিউর ঘি</a>
+            <a href="#">পিউর সরিষার তেল</a>
+          </div>
+        </div>
+
         <a href="about.html">আমাদের সম্পর্কে</a>
         <a href="contact.html">যোগাযোগ</a>
       </nav>
@@ -23,13 +33,12 @@
   </header>
 
   <main class="wrap">
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-copy">
           <h1>খাঁটি খাবার, নিরাপদ জীবন</h1>
           <p class="sub">
-            Pure Khazana থেকে নিন প্রিমিয়াম কোয়ালিটির অর্গানিক পণ্য—পরিবারের জন্য স্বাস্থ্যকর পছন্দ।
+            Pure Khazana থেকে নিন প্রিমিয়াম কোয়ালিটির অর্গানিক পণ্য—পরিবারের জন্য স্বাস্থ্যকর পছন্দ।
           </p>
 
           <div class="hero-actions">
@@ -62,13 +71,12 @@
             <span class="pill pill-green">Organic</span>
           </div>
           <h2>Pure Ghee Packages</h2>
-          <p class="sub">সবচেয়ে জনপ্রিয় ৩টি সাইজ একসাথে।</p>
+          <p class="sub">সবচেয়ে জনপ্রিয় ৩টি সাইজ একসাথে।</p>
           <a class="btn" href="products.html">সব পণ্য দেখুন</a>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED PRODUCTS -->
     <section class="section">
       <div class="section-head">
         <h2>Featured Products</h2>
@@ -83,7 +91,7 @@
           <div class="body">
             <h3 class="title">Pure Ghee 1 KG</h3>
             <div class="price-line">Regular price <span class="price-strong">৳ 1650</span></div>
-            <p class="desc">প্রিমিয়াম কোয়ালিটির অর্গানিক ঘি।</p>
+            <p class="desc">প্রিমিয়াম কোয়ালিটির অর্গানিক ঘি।</p>
             <a class="btn" href="products.html">অর্ডার করুন</a>
           </div>
         </article>
@@ -114,7 +122,6 @@
       </div>
     </section>
 
-    <!-- HOME CONTACT (added) -->
     <section class="home-contact">
       <div class="section-head">
         <h2>যোগাযোগ করুন</h2>
@@ -175,90 +182,84 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
-
-  <!-- Page styles (kept inside index for easy copy-paste) -->
   <style>
+    /* ড্রপডাউন মেনু স্টাইল */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      padding: 8px 0;
+    }
+
+    .dropdown-content a {
+      color: #1f2937 !important;
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .dropdown-content a:last-child { border-bottom: none; }
+
+    .dropdown-content a:hover {
+      background-color: #f0fdf4;
+      color: #1f7a4d !important;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* অন্যান্য সেকশন স্টাইল (পূর্বের মতই রাখা হয়েছে) */
     .hero{padding:26px 0 8px}
     .hero-inner{display:grid; grid-template-columns: 1.3fr .7fr; gap:18px; align-items:stretch}
     @media (max-width: 900px){ .hero-inner{grid-template-columns:1fr} }
-
     .hero-copy h1{margin:0; font-size:34px; letter-spacing:.2px}
     .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
     .btn-ghost{background:#ffffff; color:var(--green); border:1px solid rgba(31,122,77,.25)}
     .btn-ghost:hover{background:#f7fff9; color:var(--green-dark)}
-
     .trust{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; margin-top:16px}
     @media (max-width: 740px){ .trust{grid-template-columns:1fr} }
     .trust-card{background:rgba(255,255,255,.8); border:1px solid var(--border); border-radius:14px; padding:12px}
     .trust-card h3{margin:0 0 6px; font-size:14px}
     .trust-card p{margin:0; color:var(--muted); font-size:14px; line-height:1.6}
-
     .hero-card{background:rgba(255,255,255,.92); border:1px solid var(--border); border-radius:14px; padding:16px; box-shadow: 0 10px 26px rgba(17,24,39,.07); display:flex; flex-direction:column; gap:10px}
     .hero-card h2{margin:0; font-size:18px}
     .hero-card-top{display:flex; gap:8px; flex-wrap:wrap}
     .pill{display:inline-block; padding:6px 10px; border-radius:999px; background:#fff; border:1px solid var(--border); font-weight:900; font-size:12px; color:var(--text)}
     .pill-green{background:rgba(31,122,77,.08); border-color:rgba(31,122,77,.22); color:var(--green-dark)}
-
     .section{padding:18px 0 20px}
     .section-head{display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 0 10px}
     .section-head h2{margin:0}
     .link{color:var(--green-dark); font-weight:900; text-decoration:none}
     .link:hover{text-decoration:underline}
-    .grid-mini{padding-top:0}
-
-    /* Home contact */
     .home-contact{padding: 6px 0 34px;}
-    .contact-mini{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:18px;
-    }
+    .contact-mini{display:grid; grid-template-columns: 1fr 1fr; gap:18px;}
     @media (max-width: 900px){ .contact-mini{grid-template-columns:1fr;} }
-
-    .panel{
-      background: rgba(255,255,255,0.92);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: 0 10px 26px rgba(17,24,39,.06);
-      padding: 16px;
-    }
+    .panel{background: rgba(255,255,255,0.92); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 10px 26px rgba(17,24,39,.06); padding: 16px;}
     .h3{ margin:0 0 8px; font-size:16px; }
     .p{ margin:0 0 12px; color: var(--muted); line-height:1.7; }
-
     .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
-
-    .note{
-      margin-top: 12px;
-      padding: 12px;
-      border-radius: 12px;
-      background: rgba(31,122,77,.07);
-      border: 1px solid rgba(31,122,77,.18);
-      color: var(--text);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-    .note strong{ font-weight: 900; }
-
+    .note{margin-top: 12px; padding: 12px; border-radius: 12px; background: rgba(31,122,77,.07); border: 1px solid rgba(31,122,77,.18); color: var(--text); font-size: 14px; line-height: 1.6;}
     .form{ display:flex; flex-direction:column; gap:12px; }
     .field2{ display:flex; flex-direction:column; gap:6px; color: var(--muted); font-size: 12px; }
-    .field2 input, .field2 textarea{
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:10px 12px;
-      background:#fff;
-      color:var(--text);
-      outline:none;
-      font-size:14px;
-    }
-    .field2 input:focus, .field2 textarea:focus{
-      border-color: rgba(31, 122, 77, .65);
-      box-shadow: 0 0 0 4px rgba(31, 122, 77, .12);
-    }
-    .small{ margin: 8px 0 0; color: var(--muted); font-size: 12px; }
+    .field2 input, .field2 textarea{border:1px solid var(--border); border-radius:12px; padding:10px 12px; background:#fff; color:var(--text); outline:none; font-size:14px;}
   </style>
 
-  <!-- Home contact form: open WhatsApp with composed message -->
+  <script src="js/main.js"></script>
+
   <script>
     (function(){
       const phone = "8801309476030";
@@ -267,17 +268,10 @@
 
       form.addEventListener("submit", function(e){
         e.preventDefault();
-
         const name = document.getElementById("hName").value.trim();
         const mobile = document.getElementById("hPhone").value.trim();
         const msg = document.getElementById("hMsg").value.trim();
-
-        const text =
-          `আসসালামু আলাইকুম, আমি ${name}.\n` +
-          `মোবাইল: ${mobile}\n` +
-          `বার্তা: ${msg}\n` +
-          `পেজ: ${window.location.href}`;
-
+        const text = `আসসালামু আলাইকুম, আমি ${name}.\nমোবাইল: ${mobile}\nবার্তা: ${msg}\nপেজ: ${window.location.href}`;
         const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
         window.open(url, "_blank", "noopener");
       });
