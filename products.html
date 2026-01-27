@@ -2,70 +2,242 @@
 <html lang="bn">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ALL PRODUCTS | Pure Khazana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>আমাদের সব পণ্য | Pure Khazana</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #1f7a4d;
+      --vibrant-red: #e74c3c;
+      --light-bg: #f9fafb;
+    }
+
+    body { font-family: 'Hind Siliguri', sans-serif; background: #fff; margin: 0; padding-bottom: 80px; }
+
+    /* টপ বার ও হেডার */
+    .top-bar { background: var(--vibrant-red); color: white; text-align: center; padding: 10px; font-size: 13px; font-weight: 600; }
+    .top-bar a { color: #fff; text-decoration: none; border-bottom: 1px dashed #fff; }
+
+    .site-header { padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .brand-logo { font-size: 20px; font-weight: 800; color: var(--primary); text-decoration: none; }
+
+    .page-title-section { background: var(--light-bg); padding: 30px 15px; text-align: center; border-bottom: 1px solid #eee; }
+    .page-title-section h1 { margin: 0; font-size: 26px; color: #222; }
+    .page-title-section p { color: #666; margin-top: 5px; font-size: 14px; }
+
+    /* প্রোডাক্ট গ্রিড */
+    .product-grid {
+      display: grid;
+      gap: 15px;
+      padding: 20px 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      .product-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .product-card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; background: #fff; display: flex; flex-direction: column; position: relative; transition: transform 0.2s ease; height: 100%; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .product-card img { width: 100%; height: 160px; object-fit: contain; padding: 15px; background: #fdfdfd; }
+    .product-info { padding: 12px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .product-info h3 { font-size: 14px; margin: 0 0 10px; height: 40px; overflow: hidden; color: #333; line-height: 1.4; }
+    .price { font-size: 16px; font-weight: 700; color: var(--primary); display: block; margin-bottom: 12px; }
+    .btn-buy { background: var(--primary); color: white; text-decoration: none; display: block; padding: 10px; border-radius: 8px; font-size: 14px; font-weight: 600; margin-top: auto; }
+
+    /* কন্টাক্ট ফরম */
+    .form-section { padding: 40px 15px; background: var(--light-bg); margin-top: 40px; }
+    .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    .form-container h3 { margin-bottom: 20px; color: var(--primary); text-align: center; font-size: 20px; }
+    .form-group { margin-bottom: 15px; text-align: left; }
+    .form-group label { display: block; font-size: 14px; margin-bottom: 5px; font-weight: 600; color: #555; }
+    .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: inherit; outline: none; }
+    .btn-submit { background: var(--vibrant-red); color: white; border: none; width: 100%; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+    .btn-submit:hover { background: #c0392b; }
+
+    /* বটম নেভিগেশন */
+    .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; border-top: 1px solid #eee; padding: 10px 0; z-index: 2000; }
+    .nav-item { flex: 1; text-align: center; color: #666; text-decoration: none; font-size: 11px; }
+    .nav-item.active { color: var(--primary); }
+    .nav-item i { display: block; font-size: 18px; margin-bottom: 3px; }
+    .chat-bubble { position: fixed; bottom: 85px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000; text-decoration: none; }
+  </style>
 </head>
 <body>
+
+  <div class="top-bar">
+    অর্ডার করতে কল/WhatsApp করুন: <a href="tel:+8801309476030">+8801309476030</a>
+  </div>
+
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="index.html">Pure Khazana</a>
-
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a class="active" href="products.html">পণ্যসমূহ</a>
-        <a href="about.html">আমাদের সম্পর্কে</a>
-        <a href="contact.html">যোগাযোগ</a>
-      </nav>
-
-      <button class="menu-btn" aria-label="Open menu" id="menuBtn">Menu</button>
+    <a href="index.html" class="brand-logo">PURE KHAZANA</a>
+    <div class="header-right">
+      <i class="fa fa-search"></i>
+      <i class="fa fa-shopping-bag"></i>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="page-head">
-      <div>
-        <h1>ALL PRODUCTS</h1>
-        <p class="sub">খাঁটি খাবার, নিরাপদ জীবন — Pure Khazana</p>
+  <div class="page-title-section">
+    <h1>আমাদের সব পণ্য</h1>
+    <p>সেরা মানের অর্গানিক পণ্য বাছাই করুন</p>
+  </div>
+
+  <main class="product-grid">
+    <div class="product-card">
+      <img src="assets/images/ghee-1kg.jpg" alt="Pure Ghee">
+      <div class="product-info">
+        <h3>Pure Ghee 1 KG</h3>
+        <span class="price">৳ ১৬৫০</span>
+        <a href="https://wa.me/8801309476030?text=I+want+to+order+Ghee+1kg" class="btn-buy">অর্ডার করুন</a>
       </div>
+    </div>
 
-      <div class="toolbar">
-        <label class="field">
-          <span>Search</span>
-          <input id="searchInput" type="search" placeholder="পণ্যের নাম লিখুন..." />
-        </label>
-
-        <label class="field">
-          <span>Sort by</span>
-          <select id="sortSelect">
-            <option value="featured">Featured</option>
-            <option value="bestselling">Best selling</option>
-            <option value="az">Alphabetically, A-Z</option>
-            <option value="za">Alphabetically, Z-A</option>
-            <option value="priceLow">Price, low to high</option>
-            <option value="priceHigh">Price, high to low</option>
-            <option value="dateOld">Date, old to new</option>
-            <option value="dateNew">Date, new to old</option>
-          </select>
-        </label>
+    <div class="product-card">
+      <img src="assets/images/ghee-500g.jpg" alt="Pure Ghee">
+      <div class="product-info">
+        <h3>Pure Ghee 500 gm</h3>
+        <span class="price">৳ ৮২৫</span>
+        <a href="https://wa.me/8801309476030?text=I+want+to+order+Ghee+500g" class="btn-buy">অর্ডার করুন</a>
       </div>
-    </section>
+    </div>
 
-    <section id="grid" class="grid"></section>
+    <div class="product-card">
+      <img src="assets/images/ghee-250g.jpg" alt="Pure Ghee">
+      <div class="product-info">
+        <h3>Pure Ghee 250 gm</h3>
+        <span class="price">৳ ৪১২</span>
+        <a href="https://wa.me/8801309476030?text=I+want+to+order+Ghee+250g" class="btn-buy">অর্ডার করুন</a>
+      </div>
+    </div>
 
-    <p id="emptyState" class="empty" hidden>কোনো পণ্য পাওয়া যায়নি। অন্য কীওয়ার্ড দিয়ে চেষ্টা করুন।</p>
+    <div class="product-card">
+      <img src="assets/images/khalisha-honey.jpg" alt="Honey">
+      <div class="product-info">
+        <h3>সুন্দরবনের খলীশা মধু ১ কেজি</h3>
+        <span class="price">৳ ১৮৫০</span>
+        <a href="https://wa.me/8801309476030?text=খলীশা+মধু+অর্ডার" class="btn-buy">অর্ডার করুন</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/goran-honey.jpg" alt="Honey">
+      <div class="product-info">
+        <h3>সুন্দরবনের গরান মধু ১ কেজি</h3>
+        <span class="price">৳ ১৭৮০</span>
+        <a href="https://wa.me/8801309476030?text=গরান+মধু+অর্ডার" class="btn-buy">অর্ডার করুন</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/black-seed-honey.jpg" alt="Honey">
+      <div class="product-info">
+        <h3>কালোজিরা মধু ১ কেজি</h3>
+        <span class="price">৳ ১৭০০</span>
+        <a href="https://wa.me/8801309476030?text=কালোজিরা+মধু+অর্ডার" class="btn-buy">অর্ডার করুন</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/village-honey.jpg" alt="Honey">
+      <div class="product-info">
+        <h3>গ্রামীন চাকের মধু ১ কেজি</h3>
+        <span class="price">৳ ২২০০</span>
+        <a href="https://wa.me/8801309476030?text=চাকের+মধু+অর্ডার" class="btn-buy">অর্ডার করুন</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/boroi-honey.jpg" alt="Honey">
+      <div class="product-info">
+        <h3>বরই মধু ১ কেজি</h3>
+        <span class="price">৳ ১৩৫০</span>
+        <a href="https://wa.me/8801309476030?text=বরই+মধু+অর্ডার" class="btn-buy">অর্ডার করুন</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/lichu-honey.jpg" alt="Honey">
+      <div class="product-info">
+        <h3>লিচু ফুলের মধু ১ কেজি</h3>
+        <span class="price">৳ ৯৯০</span>
+        <a href="https://wa.me/8801309476030?text=লিচু+মধু+অর্ডার" class="btn-buy">অর্ডার করুন</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/mustard-honey.jpg" alt="Honey">
+      <div class="product-info">
+        <h3>সরিষা ফুলের মধু ১ কেজি</h3>
+        <span class="price">৳ ৭৮০</span>
+        <a href="https://wa.me/8801309476030?text=সরিষা+মধু+অর্ডার" class="btn-buy">অর্ডার করুন</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/sunflower-honey.jpg" alt="Honey">
+      <div class="product-info">
+        <h3>সূর্যমূখী ফুলের মধু ১ কেজি</h3>
+        <span class="price">৳ ৯০০</span>
+        <a href="https://wa.me/8801309476030?text=সূর্যমূখী+মধু+অর্ডার" class="btn-buy">অর্ডার করুন</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/small-bee-honey.jpg" alt="Honey">
+      <div class="product-info">
+        <h3>ক্ষুদে মৌমাছির মধু ১ কেজি</h3>
+        <span class="price">৳ ১৯০০</span>
+        <a href="https://wa.me/8801309476030?text=ক্ষুদে+মৌমাছি+মধু+অর্ডার" class="btn-buy">অর্ডার করুন</a>
+      </div>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <div>© Pure Khazana</div>
-      <a class="btn" target="_blank" rel="noopener"
-         href="https://wa.me/8801309476030?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20Pure%20Khazana%20%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87">
-        WhatsApp Order
-      </a>
+  <section class="form-section">
+    <div class="form-container">
+      <h3>সরাসরি অর্ডার বা প্রশ্ন থাকলে লিখুন</h3>
+      <form id="orderForm">
+        <div class="form-group">
+          <label>আপনার নাম</label>
+          <input type="text" id="name" placeholder="আপনার নাম লিখুন" required>
+        </div>
+        <div class="form-group">
+          <label>মোবাইল নম্বর</label>
+          <input type="tel" id="phone" placeholder="০১৭XXXXXXXX" required>
+        </div>
+        <div class="form-group">
+          <label>বার্তা (পণ্যের নাম ও ঠিকানা)</label>
+          <textarea id="message" rows="4" placeholder="আপনি কি নিতে চান এবং আপনার ডেলিভারি ঠিকানা লিখুন..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">WhatsApp এ পাঠান</button>
+      </form>
     </div>
-  </footer>
+  </section>
 
-  <script src="js/main.js"></script>
+  <a href="https://wa.me/8801309476030" class="chat-bubble"><i class="fab fa-whatsapp"></i></a>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item"><i class="fa fa-home"></i><span>হোম</span></a>
+    <a href="products.html" class="nav-item active"><i class="fa fa-th-large"></i><span>ক্যাটাগরি</span></a>
+    <a href="about.html" class="nav-item"><i class="fa fa-info-circle"></i><span>আমাদের কথা</span></a>
+    <a href="https://wa.me/8801309476030" class="nav-item"><i class="fab fa-whatsapp"></i><span>চ্যাট</span></a>
+  </nav>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const phoneNum = "8801309476030";
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const message = document.getElementById("message").value;
+      const whatsappText = `নতুন অর্ডার/প্রশ্ন:\n\nনাম: ${name}\nমোবাইল: ${phone}\nবিস্তারিত: ${message}`;
+      window.open(`https://wa.me/${phoneNum}?text=${encodeURIComponent(whatsappText)}`, '_blank');
+    });
+  </script>
+
 </body>
 </html>
