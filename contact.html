@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>যোগাযোগ | Pure Khazana</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">Pure Khazana</a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">পণ্যসমূহ</a>
+        <a href="about.html">আমাদের সম্পর্কে</a>
+        <a class="active" href="contact.html">যোগাযোগ</a>
+      </nav>
+
+      <button class="menu-btn" aria-label="Open menu" id="menuBtn">Menu</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="page-head">
+      <div>
+        <h1>যোগাযোগ</h1>
+        <p class="sub">অর্ডার বা যেকোনো প্রশ্নের জন্য WhatsApp-এ মেসেজ করুন।</p>
+      </div>
+    </section>
+
+    <section class="contact-grid">
+      <!-- Contact Card -->
+      <article class="panel">
+        <h2 class="h2">Contact Info</h2>
+
+        <div class="info">
+          <div class="row">
+            <span class="k">Location</span>
+            <span class="v">Chattogram, Bangladesh</span>
+          </div>
+
+          <div class="row">
+            <span class="k">WhatsApp</span>
+            <span class="v">+880 1309-476030</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn" target="_blank" rel="noopener"
+               href="https://wa.me/8801309476030?text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20Pure%20Khazana%20%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87">
+              WhatsApp এ মেসেজ করুন
+            </a>
+
+            <a class="btn btn-ghost" href="tel:+8801309476030">
+              কল করুন
+            </a>
+          </div>
+
+          <div class="note">
+            <strong>Tip:</strong> আপনার লোকেশন এবং পণ্যের নাম লিখে দিলে অর্ডার দ্রুত কনফার্ম করা যাবে।
+          </div>
+        </div>
+      </article>
+
+      <!-- Form Card -->
+      <article class="panel">
+        <h2 class="h2">মেসেজ পাঠান</h2>
+        <p class="p">নিচের ফর্ম পূরণ করে “WhatsApp এ পাঠান” চাপুন—মেসেজ অটো WhatsApp-এ চলে যাবে।</p>
+
+        <form id="contactForm" class="form" autocomplete="on">
+          <label class="field2">
+            <span>আপনার নাম</span>
+            <input id="cName" type="text" placeholder="যেমন: Abedin" required />
+          </label>
+
+          <label class="field2">
+            <span>মোবাইল নম্বর</span>
+            <input id="cPhone" type="tel" placeholder="যেমন: 01XXXXXXXXX" required />
+          </label>
+
+          <label class="field2">
+            <span>আপনার বার্তা</span>
+            <textarea id="cMsg" rows="5" placeholder="যেমন: Pure Ghee 1 KG ১টি চাই, লোকেশন: চট্টগ্রাম..." required></textarea>
+          </label>
+
+          <button class="btn" type="submit">WhatsApp এ পাঠান</button>
+          <p class="small">বাটন চাপলে নতুন ট্যাবে WhatsApp খুলবে।</p>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>© Pure Khazana</div>
+      <a class="btn" target="_blank" rel="noopener"
+         href="https://wa.me/8801309476030?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20Pure%20Khazana%20%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87">
+        WhatsApp Order
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <!-- Page-only styles -->
+  <style>
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      padding: 10px 0 34px;
+    }
+    @media (max-width: 900px){ .contact-grid{grid-template-columns:1fr;} }
+
+    .panel{
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 10px 26px rgba(17,24,39,.06);
+      padding: 16px;
+    }
+    .h2{ margin: 0 0 10px; font-size: 18px; }
+    .p{ margin: 0 0 12px; color: var(--muted); line-height: 1.7; }
+
+    .info .row{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 0;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .k{ color: var(--muted); font-size: 13px; }
+    .v{ font-weight: 800; }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .btn-ghost{
+      background:#ffffff;
+      color:var(--green);
+      border:1px solid rgba(31,122,77,.25);
+    }
+    .btn-ghost:hover{
+      background:#f7fff9;
+      color:var(--green-dark);
+    }
+
+    .note{
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(31,122,77,.07);
+      border: 1px solid rgba(31,122,77,.18);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .note strong{ font-weight: 900; }
+
+    .form{ display:flex; flex-direction:column; gap:12px; }
+    .field2{ display:flex; flex-direction:column; gap:6px; color: var(--muted); font-size: 12px; }
+    .field2 input, .field2 textarea{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:10px 12px;
+      background:#fff;
+      color:var(--text);
+      outline:none;
+      font-size:14px;
+    }
+    .field2 input:focus, .field2 textarea:focus{
+      border-color: rgba(31, 122, 77, .65);
+      box-shadow: 0 0 0 4px rgba(31, 122, 77, .12);
+    }
+    .small{ margin: 8px 0 0; color: var(--muted); font-size: 12px; }
+  </style>
+
+  <!-- Page JS (no backend): open WhatsApp with composed message -->
+  <script>
+    (function(){
+      const phone = "8801309476030";
+      const form = document.getElementById("contactForm");
+      if(!form) return;
+
+      form.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        const name = document.getElementById("cName").value.trim();
+        const mobile = document.getElementById("cPhone").value.trim();
+        const msg = document.getElementById("cMsg").value.trim();
+
+        const text =
+          `আসসালামু আলাইকুম, আমি ${name}.\n` +
+          `মোবাইল: ${mobile}\n` +
+          `বার্তা: ${msg}\n` +
+          `পেজ: ${window.location.href}`;
+
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+        window.open(url, "_blank", "noopener");
+      });
+    })();
+  </script>
+</body>
+</html>
