@@ -41,12 +41,22 @@
       .product-grid { grid-template-columns: repeat(4, 1fr); }
     }
 
-    /* প্রোডাক্ট লিঙ্ক স্টাইল */
-    .product-link { text-decoration: none; color: inherit; display: block; height: 100%; }
+    .product-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
 
     .product-card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; background: #fff; display: flex; flex-direction: column; position: relative; transition: transform 0.2s ease; height: 100%; }
     .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    .product-card img { width: 100%; height: 160px; object-fit: contain; padding: 15px; background: #fdfdfd; }
+
+    /* ছবি সেন্টার করার জন্য এই অংশটি আপডেট করা হয়েছে */
+    .product-card img { 
+      width: 100%; 
+      height: 180px; 
+      object-fit: contain; /* ছবি পুরোটা দেখাবে এবং কাটবে না */
+      padding: 10px; 
+      background: #fdfdfd;
+      margin: 0 auto;
+      display: block;
+    }
+
     .product-info { padding: 12px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
     .product-info h3 { font-size: 14px; margin: 0 0 10px; height: 40px; overflow: hidden; color: #333; line-height: 1.4; }
     .price { font-size: 16px; font-weight: 700; color: var(--primary); display: block; margin-bottom: 12px; }
@@ -90,7 +100,7 @@
   <h2 class="section-title">আমাদের পণ্যসমূহ</h2>
 
   <main class="product-grid" id="main-product-grid">
-    </main>
+  </main>
 
   <section class="form-section">
     <div class="form-container">
@@ -149,7 +159,6 @@
       { id: 12, name: "ক্ষুদে মৌমাছির মধু ১ কেজি", price: 1900, img: "assets/images/small-bee-honey.jpg" }
     ];
 
-    // গ্রিডে প্রোডাক্ট লোড করা
     const grid = document.getElementById('main-product-grid');
     products.forEach(p => {
       grid.innerHTML += `
@@ -166,7 +175,6 @@
       `;
     });
 
-    // WhatsApp ফরম হ্যান্ডলার
     document.getElementById("orderForm").addEventListener("submit", function(e) {
       e.preventDefault();
       const name = document.getElementById("name").value;
