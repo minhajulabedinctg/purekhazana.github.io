@@ -1,1 +1,0 @@
-# purekhazana.github.io
