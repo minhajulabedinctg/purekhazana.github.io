@@ -1,158 +1,166 @@
 /* ----------------------
-   Basic Body & Background
+   Base
 ------------------------ */
+* { box-sizing: border-box; }
+
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #222;
-    line-height: 1.6;
-    background: url("../assets/images/background.jpg") no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  line-height: 1.6;
+
+  /* NOTE: url() path is relative to THIS css file location (css/style.css) */
+  background: url("../assets/images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+  position: relative;
+  min-height: 100vh;
 }
 
-/* Overlay for text readability */
+/* Overlay for text readability (safer layering) */
 body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.25);
-    z-index: -1;
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.25);
+  z-index: 0;            /* was -1 */
+  pointer-events: none;
+}
+
+/* Put all page content above overlay */
+header, .container, footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* ----------------------
    Header & Navigation
 ------------------------ */
 header {
-    background: rgba(31, 122, 77, 0.85);
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  background: rgba(31, 122, 77, 0.85);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10; /* stays above page content */
 }
 
 nav a {
-    color: #fff;
-    margin: 0 12px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-nav a:hover {
-    color: #ffd700;
-}
+nav a:hover { color: #ffd700; }
 
 /* ----------------------
    Container
 ------------------------ */
 .container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 0;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 0;
 }
 
 /* ----------------------
    Buttons
 ------------------------ */
 .btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 22px;
-    background: #1f7a4d;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 25px;
-    font-size: 14px;
-    transition: background 0.3s;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 22px;
+  background: #1f7a4d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.15s;
 }
 
 .btn:hover {
-    background: #14532d;
+  background: #14532d;
+  transform: translateY(-1px);
 }
 
 /* ----------------------
    Products Grid
 ------------------------ */
 .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
 }
 
 .product-card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
 .product-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Product image: contain is better for product posters (no cropping) */
 .product-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
+  width: 100%;
+  height: 180px;
+  object-fit: contain;      /* was cover */
+  object-position: center;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: #f4f4f4;      /* fills empty space when contain */
 }
 
-.product-card h3 {
-    margin: 10px 0 5px;
-}
-
-.product-card p {
-    margin: 5px 0;
-}
+/* ----------------------
+   Text styles
+------------------------ */
+.product-card h3 { margin: 10px 0 5px; }
+.product-card p  { margin: 5px 0; }
 
 /* ----------------------
    Price Style
 ------------------------ */
 .price {
-    font-size: 22px;
-    font-weight: bold;
-    color: #1f7a4d;
-    margin: 10px 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #1f7a4d;
+  margin: 10px 0;
 }
 
 /* ----------------------
    Highlighted Ghee (1KG)
 ------------------------ */
-.highlight {
-    border: 2px solid #1f7a4d;
-}
+.highlight { border: 2px solid #1f7a4d; }
 
 .tag {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: #1f7a4d;
-    color: #fff;
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 20px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #1f7a4d;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
 }
 
 /* ----------------------
    Footer
 ------------------------ */
 footer {
-    background: rgba(34, 34, 34, 0.9);
-    color: #ccc;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+  background: rgba(34, 34, 34, 0.9);
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
 }
