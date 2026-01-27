@@ -5,156 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>আমাদের সম্পর্কে | Pure Khazana</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* About Page Specific CSS */
+    .about-section { padding: 60px 0; }
+    .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    @media (max-width: 800px) { .about-content { grid-template-columns: 1fr; } }
+    .about-img img { width: 100%; border-radius: 20px; box-shadow: var(--shadow-md); }
+    .about-text h1 { color: #1f7a4d; font-size: 36px; margin-bottom: 20px; }
+    .about-text p { line-height: 1.8; color: #4b5563; margin-bottom: 15px; }
+    
+    /* Dropdown CSS from Index */
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-content { display: none; position: absolute; background-color: #fff; min-width: 180px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 12px; top: 100%; left: 0; z-index: 1000; padding: 8px 0; }
+    .dropdown-content a { color: #1f2937 !important; padding: 12px 16px; display: block; text-decoration: none; border-bottom: 1px solid #f3f4f6; }
+    .dropdown:hover .dropdown-content { display: block; }
+  </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" style="background-color: #1f7a4d;">
     <div class="wrap header-inner">
-      <a class="brand" href="index.html">Pure Khazana</a>
-
+      <a class="brand" href="index.html" style="color: #fff;">Pure Khazana</a>
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="products.html">পণ্যসমূহ</a>
-        <a class="active" href="about.html">আমাদের সম্পর্কে</a>
+        <div class="dropdown">
+          <a href="products.html" class="drop-btn">পণ্যসমূহ <small>▾</small></a>
+          <div class="dropdown-content">
+            <a href="#">পিউর হানি (মধু)</a>
+            <a href="#">পিউর ঘি</a>
+            <a href="#">পিউর সরিষার তেল</a>
+          </div>
+        </div>
+        <a href="about.html" class="active">আমাদের সম্পর্কে</a>
         <a href="contact.html">যোগাযোগ</a>
       </nav>
-
-      <button class="menu-btn" aria-label="Open menu" id="menuBtn">Menu</button>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="page-head">
-      <div>
-        <h1>আমাদের সম্পর্কে</h1>
-        <p class="sub">Pure Khazana — খাঁটি খাবার, নিরাপদ জীবন।</p>
+  <main class="wrap about-section">
+    <div class="about-content">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80" alt="About Us">
       </div>
-    </section>
-
-    <section class="about-grid">
-      <article class="panel">
-        <h2 class="h2">আমাদের লক্ষ্য</h2>
-        <p class="p">
-          Pure Khazana এর লক্ষ্য হলো পরিবারের জন্য নিরাপদ, মানসম্মত এবং বিশ্বস্ত উৎসের খাবার পৌঁছে দেওয়া।
-          যাতে প্রতিদিনের রান্না হয় আরও স্বাস্থ্যকর ও নিশ্চিন্ত।
-        </p>
-        <p class="p">
-          আমরা পণ্যের গুণমানকে অগ্রাধিকার দিই এবং গ্রাহকের বিশ্বাসকে সবচেয়ে বড় সম্পদ মনে করি।
-        </p>
-      </article>
-
-      <article class="panel">
-        <h2 class="h2">আমরা কীভাবে কাজ করি</h2>
-        <ul class="list">
-          <li>উৎস নির্বাচন: নির্ভরযোগ্য উৎস থেকে সংগ্রহে গুরুত্ব দিই।</li>
-          <li>মান যাচাই: পণ্যের স্বাদ, ঘ্রাণ, রং ও টেক্সচার—বেসিক চেক করি।</li>
-          <li>স্বচ্ছ যোগাযোগ: প্রাইস/প্যাকেজ/অর্ডার প্রসেস পরিষ্কারভাবে জানাই।</li>
-          <li>সহজ অর্ডার: WhatsApp-এর মাধ্যমে দ্রুত অর্ডার নেওয়া হয়।</li>
-        </ul>
-      </article>
-
-      <article class="panel">
-        <h2 class="h2">কেন Pure Khazana</h2>
-        <div class="mini-cards">
-          <div class="mini">
-            <h3>Quality First</h3>
-            <p>প্রিমিয়াম কোয়ালিটিকে আমরা কখনও কম্প্রোমাইজ করি না।</p>
-          </div>
-          <div class="mini">
-            <h3>Clean & Honest</h3>
-            <p>পণ্যের তথ্য সহজ ভাষায়, পরিষ্কারভাবে উপস্থাপন করি।</p>
-          </div>
-          <div class="mini">
-            <h3>Customer Support</h3>
-            <p>প্রশ্ন থাকলে WhatsApp-এ দ্রুত রিপ্লাই দেওয়ার চেষ্টা করি।</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="panel">
-        <h2 class="h2">অর্ডার / যোগাযোগ</h2>
-        <p class="p">
-          অর্ডার করতে নিচের বাটনে ক্লিক করুন—আপনার পছন্দের পণ্য ও পরিমাণ লিখে পাঠালেই আমরা কনফার্ম করব।
-        </p>
-        <a class="btn" target="_blank" rel="noopener"
-           href="https://wa.me/8801309476030?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20Pure%20Khazana%20%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87">
-          WhatsApp এ অর্ডার করুন
-        </a>
-
-        <div class="note">
-          <strong>Note:</strong> ডেলিভারি এরিয়া/চার্জ/সময় আপনার লোকেশন অনুযায়ী পরিবর্তিত হতে পারে।
-        </div>
-      </article>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <div>© Pure Khazana</div>
-      <a class="btn" target="_blank" rel="noopener"
-         href="https://wa.me/8801309476030?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20Pure%20Khazana%20%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87">
-        WhatsApp Order
-      </a>
+      <div class="about-text">
+        <h1>আমাদের গল্প</h1>
+        <p>Pure Khazana-এর যাত্রা শুরু হয়েছিল আপনাদের হাতে শতভাগ খাঁটি এবং প্রাকৃতিক খাবার পৌঁছে দেওয়ার অঙ্গীকার নিয়ে। আজকের ভেজালের ভিড়ে খাঁটি পণ্য খুঁজে পাওয়া দুষ্কর, আর সেই অভাব দূর করতেই আমরা কাজ করছি।</p>
+        <p>আমরা সরাসরি খামারি এবং বিশ্বস্ত উৎস থেকে মধু, ঘি এবং সরিষার তেলের মতো নিত্যপ্রয়োজনীয় অর্গানিক পণ্য সংগ্রহ করি। আমাদের প্রতিটি পণ্য মান নিয়ন্ত্রিত এবং স্বাস্থ্যসম্মত।</p>
+        <p><strong>আমাদের লক্ষ্য:</strong> সুস্থ জীবনযাপনে খাঁটি খাবারের নিশ্চয়তা প্রদান করা।</p>
+      </div>
     </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-
-  <!-- Page-only styles (keeps your main css unchanged) -->
-  <style>
-    .about-grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap:18px;
-      padding: 10px 0 34px;
-    }
-    @media (max-width: 860px){ .about-grid{grid-template-columns: 1fr;} }
-
-    .panel{
-      background: rgba(255,255,255,0.92);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: 0 10px 26px rgba(17,24,39,.06);
-      padding: 16px;
-    }
-
-    .h2{ margin: 0 0 10px; font-size: 18px; }
-    .p{ margin: 0 0 10px; color: var(--muted); line-height: 1.7; }
-
-    .list{
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .mini-cards{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap:12px;
-    }
-    @media (max-width: 860px){ .mini-cards{grid-template-columns: 1fr;} }
-
-    .mini{
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 12px;
-      background:#fff;
-    }
-    .mini h3{ margin: 0 0 6px; font-size: 14px; }
-    .mini p{ margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
-
-    .note{
-      margin-top: 12px;
-      padding: 12px;
-      border-radius: 12px;
-      background: rgba(31,122,77,.07);
-      border: 1px solid rgba(31,122,77,.18);
-      color: var(--text);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-    .note strong{ font-weight: 900; }
-  </style>
+  </main>
 </body>
 </html>
-
