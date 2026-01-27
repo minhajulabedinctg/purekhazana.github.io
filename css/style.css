@@ -1,133 +1,183 @@
+/* --- Global Styles --- */
 :root {
-  --primary-green: #1f7a4d;
-  --dark-green: #14532d;
-  --gold: #ffd700;
-  --white: #ffffff;
-  --bg-light: #f8fafc;
-  --text-main: #1e293b;
+  --primary: #1f7a4d;
+  --vibrant-red: #e74c3c;
+  --light-bg: #f9fafb;
+  --fb-blue: #1877F2;
 }
 
-body {
-  margin: 0;
-  font-family: 'Hind Siliguri', sans-serif;
-  background-color: var(--bg-light);
-  color: var(--text-main);
+body { 
+  font-family: 'Hind Siliguri', sans-serif; 
+  background: #fff; 
+  margin: 0; 
+  padding-bottom: 80px; 
+  line-height: 1.6; 
 }
 
-.wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* --- Layout Components --- */
+.container { 
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 30px 15px; 
 }
 
-/* Header with Green Background */
-.site-header {
-  background-color: var(--primary-green);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.top-bar { 
+  background: var(--vibrant-red); 
+  color: white; 
+  text-align: center; 
+  padding: 10px; 
+  font-size: 13px; 
+  font-weight: 600; 
 }
 
-.header-inner {
+.top-bar a { color: #fff; text-decoration: none; border-bottom: 1px dashed #fff; }
+
+.site-header { 
+  padding: 12px 15px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  border-bottom: 1px solid #eee; 
+  position: sticky; 
+  top: 0; 
+  background: #fff; 
+  z-index: 1000; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+}
+
+.brand-logo { 
+  font-size: 20px; 
+  font-weight: 800; 
+  color: var(--primary); 
+  text-decoration: none; 
+}
+
+/* --- Hero Section --- */
+.about-hero { 
+  background: var(--light-bg); 
+  padding: 50px 20px; 
+  text-align: center; 
+  border-bottom: 1px solid #eee; 
+}
+
+.about-hero h1 { font-size: 28px; color: var(--primary); margin: 0; }
+
+/* --- Feature Cards --- */
+.feature-card { 
+  background: white; 
+  border: 1px solid #eee; 
+  padding: 20px; 
+  border-radius: 12px; 
+  margin-bottom: 30px; 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 15px; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+}
+
+.feature-card i { font-size: 24px; color: var(--vibrant-red); margin-top: 5px; }
+
+/* --- Facebook Feature Grid & Cards --- */
+.fb-feature-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 25px; 
+  margin-top: 20px; 
+}
+
+.fb-custom-card { 
+  background: #fff; 
+  border-radius: 15px; 
+  overflow: hidden; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+  border: 1px solid #efefef; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+
+.fb-custom-card:hover { 
+  transform: translateY(-8px); 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* ছবির সাইজ এবং রেশিও ফিক্স করার মূল অংশ */
+.fb-card-img { 
+  width: 100%; 
+  height: 220px;          /* সব ছবির উচ্চতা সমান */
+  object-fit: cover;      /* ছবি চ্যাপ্টা হবে না, ফ্রেম অনুযায়ী কাটবে */
+  object-position: center; /* মাঝখানের অংশ দেখাবে */
+  display: block;
+}
+
+.fb-card-body { 
+  padding: 20px; 
+  text-align: center; 
+  flex-grow: 1;           /* সব কার্ডের উচ্চতা সমান রাখবে */
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 15px 0;
 }
 
-.brand {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 24px;
-}
+.fb-card-body h4 { margin: 0 0 10px; font-size: 17px; color: #333; }
+.fb-card-body p { font-size: 14px; color: #666; margin-bottom: 20px; }
 
-.brand span { color: var(--gold); }
-
-.nav { display: flex; align-items: center; }
-
-.nav a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 15px;
-  font-size: 15px;
-}
-
-.nav a:hover { color: var(--gold); }
-
-/* Dropdown Styles */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--white);
-  min-width: 180px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  top: 100%;
-  left: 0;
-  overflow: hidden;
-}
-
-.dropdown-content a {
-  color: var(--text-main) !important;
-  padding: 12px 16px;
-  display: block;
-  border-bottom: 1px solid #eee;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-  color: var(--primary-green) !important;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Cards & Grid */
-.page-head { padding: 40px 0; text-align: center; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-
-.card {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+.fb-btn { 
+  background: var(--fb-blue); 
+  color: white; 
+  text-decoration: none; 
+  padding: 12px 25px; 
+  border-radius: 50px; 
+  font-size: 14px; 
+  font-weight: 600; 
   transition: 0.3s;
-}
-
-.card:hover { transform: translateY(-5px); }
-
-.media { height: 200px; background: #eee; }
-.media img { width: 100%; height: 100%; object-fit: cover; }
-
-.body { padding: 20px; text-align: center; }
-.title { font-size: 18px; margin-bottom: 10px; }
-.price-strong { display: block; font-size: 20px; color: var(--primary-green); font-weight: 700; margin-bottom: 15px; }
-
-.btn {
   display: inline-block;
-  background: var(--primary-green);
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
 }
 
-.btn:hover { background: var(--dark-green); }
+.fb-btn:hover { background: #145dbf; opacity: 0.9; }
 
-/* Mobile Menu Button */
-.menu-btn { display: none; }
+/* --- Footer & UI Components --- */
+.contact-info-box { 
+  background: var(--primary); 
+  color: white; 
+  padding: 30px; 
+  border-radius: 15px; 
+  text-align: center; 
+  margin-top: 50px; 
+}
 
-@media (max-width: 768px) {
-    .nav { display: none; }
-    .menu-btn { display: block; background: var(--gold); border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer; }
+.contact-info-box a { color: white; text-decoration: none; font-weight: 700; border-bottom: 1px dashed #fff; }
+
+.bottom-nav { 
+  position: fixed; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  background: #fff; 
+  display: flex; 
+  border-top: 1px solid #eee; 
+  padding: 10px 0; 
+  z-index: 2000; 
+}
+
+.nav-item { flex: 1; text-align: center; color: #666; text-decoration: none; font-size: 11px; }
+.nav-item.active { color: var(--vibrant-red); font-weight: 700; }
+.nav-item i { display: block; font-size: 18px; margin-bottom: 3px; }
+
+.chat-bubble { 
+  position: fixed; 
+  bottom: 85px; 
+  right: 20px; 
+  background: #25d366; 
+  color: white; 
+  width: 55px; 
+  height: 55px; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 28px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+  z-index: 1000; 
+  text-decoration: none; 
 }
