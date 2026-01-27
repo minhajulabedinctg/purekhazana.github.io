@@ -3,32 +3,31 @@
 ------------------------ */
 * { box-sizing: border-box; }
 
-body {
+body{
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: #222;
   line-height: 1.6;
 
-  /* NOTE: url() path is relative to THIS css file location (css/style.css) */
-  background: url("../assets/images/background.jpg") no-repeat center center fixed;
-  background-size: cover;
+  /* background.jpg নেই, তাই clean gradient */
+  background: linear-gradient(135deg, #f7f7f7 0%, #e9f5ee 45%, #f7f7f7 100%);
+  background-attachment: fixed;
 
   position: relative;
   min-height: 100vh;
 }
 
-/* Overlay for text readability (safer layering) */
-body::before {
+/* Soft overlay (optional, low opacity) */
+body::before{
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.25);
-  z-index: 0;            /* was -1 */
+  background: rgba(255,255,255,.12);
+  z-index: 0;
   pointer-events: none;
 }
 
-/* Put all page content above overlay */
-header, .container, footer {
+header, .container, footer{
   position: relative;
   z-index: 1;
 }
@@ -36,40 +35,44 @@ header, .container, footer {
 /* ----------------------
    Header & Navigation
 ------------------------ */
-header {
-  background: rgba(31, 122, 77, 0.85);
+header{
+  background: rgba(31, 122, 77, 0.88);
   color: #fff;
-  padding: 20px 0;
+  padding: 18px 0;
   text-align: center;
   position: sticky;
   top: 0;
-  z-index: 10; /* stays above page content */
+  z-index: 10;
 }
 
-nav a {
+header h2{ margin: 0; }
+
+nav a{
   color: #fff;
   margin: 0 12px;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color .2s;
 }
 
-nav a:hover { color: #ffd700; }
+nav a:hover{ color: #ffd700; }
 
 /* ----------------------
    Container
 ------------------------ */
-.container {
+.container{
   width: 90%;
   max-width: 1100px;
   margin: auto;
-  padding: 40px 0;
+  padding: 34px 0 46px;
 }
+
+.container h2{ margin-top: 0; }
 
 /* ----------------------
    Buttons
 ------------------------ */
-.btn {
+.btn{
   display: inline-block;
   margin-top: 15px;
   padding: 10px 22px;
@@ -78,10 +81,10 @@ nav a:hover { color: #ffd700; }
   text-decoration: none;
   border-radius: 25px;
   font-size: 14px;
-  transition: background 0.3s, transform 0.15s;
+  transition: background .2s, transform .15s;
 }
 
-.btn:hover {
+.btn:hover{
   background: #14532d;
   transform: translateY(-1px);
 }
@@ -89,49 +92,45 @@ nav a:hover { color: #ffd700; }
 /* ----------------------
    Products Grid
 ------------------------ */
-.products {
+.products{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
-.product-card {
+.product-card{
   border: 1px solid #ddd;
   padding: 20px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255,255,255,0.96);
   border-radius: 12px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform .25s, box-shadow .25s;
   position: relative;
 }
 
-.product-card:hover {
+.product-card:hover{
   transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
 }
 
-/* Product image: contain is better for product posters (no cropping) */
-.product-card img {
+.product-card img{
   width: 100%;
   height: 180px;
-  object-fit: contain;      /* was cover */
+  object-fit: contain;        /* product poster crop হবে না */
   object-position: center;
   border-radius: 10px;
   margin-bottom: 15px;
-  background: #f4f4f4;      /* fills empty space when contain */
+  background: #f4f4f4;
 }
 
-/* ----------------------
-   Text styles
------------------------- */
-.product-card h3 { margin: 10px 0 5px; }
-.product-card p  { margin: 5px 0; }
+.product-card h3{ margin: 10px 0 5px; }
+.product-card p{ margin: 5px 0; }
 
 /* ----------------------
-   Price Style
+   Price
 ------------------------ */
-.price {
+.price{
   font-size: 22px;
   font-weight: bold;
   color: #1f7a4d;
@@ -139,11 +138,11 @@ nav a:hover { color: #ffd700; }
 }
 
 /* ----------------------
-   Highlighted Ghee (1KG)
+   Highlight tag
 ------------------------ */
-.highlight { border: 2px solid #1f7a4d; }
+.highlight{ border: 2px solid #1f7a4d; }
 
-.tag {
+.tag{
   position: absolute;
   top: 12px;
   right: 12px;
@@ -157,10 +156,10 @@ nav a:hover { color: #ffd700; }
 /* ----------------------
    Footer
 ------------------------ */
-footer {
-  background: rgba(34, 34, 34, 0.9);
+footer{
+  background: rgba(34,34,34,0.9);
   color: #ccc;
   text-align: center;
-  padding: 20px;
+  padding: 18px;
   margin-top: 40px;
 }
