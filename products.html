@@ -1,4 +1,123 @@
-<script>
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>আমাদের পণ্যসমূহ | Pure Khazana</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #1f7a4d;
+      --vibrant-red: #e74c3c;
+      --light-bg: #f9fafb;
+    }
+
+    body { font-family: 'Hind Siliguri', sans-serif; background: #fff; margin: 0; padding-bottom: 80px; }
+
+    .top-bar { background: var(--vibrant-red); color: white; text-align: center; padding: 10px; font-size: 13px; font-weight: 600; }
+    .top-bar a { color: #fff; text-decoration: none; border-bottom: 1px dashed #fff; }
+
+    .site-header { padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .brand-logo { font-size: 20px; font-weight: 800; color: var(--primary); text-decoration: none; }
+
+    .section-title { text-align: center; margin: 30px 0 20px; font-size: 24px; font-weight: 700; color: #222; }
+
+    .product-grid {
+      display: grid;
+      gap: 15px;
+      padding: 0 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      .product-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .product-card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; background: #fff; display: flex; flex-direction: column; transition: transform 0.2s ease; height: 100%; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    
+    .product-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
+
+    .product-card img { 
+      width: 100%; 
+      height: 180px; 
+      object-fit: contain; 
+      padding: 10px; 
+      background: #fdfdfd;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .product-info { padding: 12px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .product-info h3 { font-size: 14px; margin: 0 0 10px; color: #333; line-height: 1.4; }
+    .price { font-size: 16px; font-weight: 700; color: var(--primary); display: block; margin-bottom: 12px; }
+    .btn-buy { background: var(--primary); color: white; padding: 10px; border-radius: 8px; font-size: 14px; font-weight: 600; margin-top: auto; }
+
+    .form-section { padding: 40px 15px; background: var(--light-bg); margin-top: 40px; }
+    .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; border: 1px solid #eee; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; font-size: 14px; margin-bottom: 5px; font-weight: 600; color: #555; }
+    .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: inherit; }
+
+    .btn-submit { background: var(--vibrant-red); color: white; border: none; width: 100%; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; }
+
+    .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; border-top: 1px solid #eee; padding: 10px 0; z-index: 2000; }
+    .nav-item { flex: 1; text-align: center; color: #666; text-decoration: none; font-size: 11px; }
+    .nav-item i { display: block; font-size: 18px; margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    অর্ডার করতে কল বা WhatsApp করুন: <a href="tel:+8801309476030">+8801309476030</a>
+  </div>
+
+  <header class="site-header">
+    <a href="index.html" class="brand-logo">PURE KHAZANA</a>
+    <div class="header-right">
+      <i class="fa fa-search"></i>
+      <i class="fa fa-shopping-bag"></i>
+    </div>
+  </header>
+
+  <h2 class="section-title">আমাদের সকল পণ্য</h2>
+
+  <main class="product-grid" id="main-product-grid">
+    </main>
+
+  <section class="form-section">
+    <div class="form-container">
+      <h3 style="text-align: center; color: var(--primary);">সরাসরি অর্ডার করুন</h3>
+      <form id="orderForm">
+        <div class="form-group">
+          <label>আপনার নাম</label>
+          <input type="text" id="name" placeholder="নাম লিখুন" required>
+        </div>
+        <div class="form-group">
+          <label>মোবাইল নম্বর</label>
+          <input type="tel" id="phone" placeholder="০১৭XXXXXXXX" required>
+        </div>
+        <div class="form-group">
+          <label>পণ্যের নাম ও ঠিকানা</label>
+          <textarea id="message" rows="4" placeholder="কি কি নিতে চান এবং ঠিকানা লিখুন..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">WhatsApp এ পাঠান</button>
+      </form>
+    </div>
+  </section>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item"><i class="fa fa-home"></i><span>হোম</span></a>
+    <a href="product.html" class="nav-item"><i class="fa fa-th-large"></i><span>প্রোডাক্টস</span></a>
+    <a href="https://wa.me/8801309476030" class="nav-item"><i class="fab fa-whatsapp"></i><span>চ্যাট</span></a>
+  </nav>
+
+  <script>
     const products = [
       // --- ঘি (৩টি সাইজ) ---
       { id: 1, name: "Pure Ghee 1 KG", price: "", img: "https://i.ibb.co.com/3mhRZFTg/image.jpg" },
@@ -54,9 +173,9 @@
       { id: 22, name: "হানিনাট ১ কেজি", price: "", img: "assets/images/honeynut-1kg.jpg" },
       { id: 23, name: "হানিনাট ৫০০ গ্রাম", price: "", img: "assets/images/honeynut-500g.jpg" },
       { id: 24, name: "হানিনাট ২৫০ গ্রাম", price: "", img: "assets/images/honeynut-250g.jpg" },
-      { id: 25, name: "আজওয়া", price: "", img: "assets/images/ajwa.jpg" },
-      { id: 26, name: "আজওয়া প্রিমিয়াম", price: "", img: "assets/images/ajwa-premium.jpg" },
-      { id: 27, name: "মরিয়ম", price: "", img: "assets/images/morium.jpg" },
+      { id: 25, name: "আজওয়া", price: "", img: "assets/images/ajwa.jpg" },
+      { id: 26, name: "আজওয়া প্রিমিয়াম", price: "", img: "assets/images/ajwa-premium.jpg" },
+      { id: 27, name: "মরিয়ম", price: "", img: "assets/images/morium.jpg" },
 
       // --- কম্বো প্যাকেজ ---
       { id: 28, name: "কালোজিরা+বরই+সরিষা ২৫০ কম্বো", price: "", img: "assets/images/combo1.jpg" },
@@ -64,13 +183,9 @@
       { id: 30, name: "সুন্দরবন (খলীশা+গরান) + ক্ষুদে মৌমাছি + সূর্যমুখী ২৫০ কম্বো", price: "", img: "assets/images/combo3.jpg" }
     ];
 
-    // গ্রিডে প্রোডাক্ট লোড করার লুপ কোড
     const grid = document.getElementById('main-product-grid');
-    
     products.forEach(p => {
-      // দাম না থাকলে প্রাইস ট্যাগ হাইড থাকবে
       const priceHTML = p.price ? `<span class="price">৳ ${p.price}</span>` : "";
-      
       grid.innerHTML += `
         <div class="product-card">
           <a href="product-details.html?id=${p.id}" class="product-link">
@@ -85,7 +200,6 @@
       `;
     });
 
-    // WhatsApp ফরম হ্যান্ডলার (নিচে থাকা আগের কোডটি অপরিবর্তিত থাকল)
     const orderForm = document.getElementById("orderForm");
     if(orderForm) {
         orderForm.addEventListener("submit", function(e) {
@@ -98,3 +212,5 @@
         });
     }
   </script>
+</body>
+</html>
