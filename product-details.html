@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>পণ্য বিস্তারিত | Pure Khazana</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,11 +12,11 @@
 
   <header class="site-header">
     <a href="index.html" class="brand-logo">PURE KHAZANA</a>
-    <a href="javascript:history.back()" style="color:#333; font-size: 20px;"><i class="fa fa-arrow-left"></i></a>
+    <a href="javascript:history.back()" style="color:#333; font-size: 22px; text-decoration: none;"><i class="fa fa-arrow-left"></i></a>
   </header>
 
   <div class="container" id="details-view">
-    <div style="padding: 50px;">লোড হচ্ছে...</div>
+    <div style="padding: 50px; text-align: center;">ডাটা লোড হচ্ছে...</div>
   </div>
 
   <a href="index.html" class="bottom-nav">
@@ -27,7 +27,7 @@
   </a>
 
   <script>
-    // আপনার সব পণ্যের মাস্টার লিস্ট (এটি ভুল হলে লোড হবে না)
+    // এই লিস্টটি product.html এর সাথে হুবহু এক
     const products = [
       { id: 1, name: "Pure Ghee 1 KG", img: "https://i.ibb.co.com/3mhRZFTg/image.jpg" },
       { id: 2, name: "Pure Ghee 500 gm", img: "https://i.ibb.co.com/FbhxyCSh/image.jpg" },
@@ -70,44 +70,28 @@
       { id: 30, name: "কম্বো ৩ (সুন্দরবন+ক্ষুদে+সূর্যমুখী)", img: "assets/images/combo3.jpg" }
     ];
 
-    // URL থেকে আইডি নেওয়া
     const params = new URLSearchParams(window.location.search);
     const productId = parseInt(params.get('id'));
-    
-    // নির্দিষ্ট পণ্যটি খুঁজে বের করা
     const product = products.find(p => p.id === productId);
 
     const displayArea = document.getElementById('details-view');
 
     if (product) {
       const waMessage = encodeURIComponent(`আসসালামু আলাইকুম, আমি আপনার এই পণ্যটি কিনতে চাই:\nপণ্য: ${product.name}\nআইডি: ${product.id}`);
-      
       displayArea.innerHTML = `
         <div class="detail-card">
           <img src="${product.img}" alt="${product.name}">
           <div class="detail-info">
             <h2>${product.name}</h2>
             <p>১০০% খাঁটি ও প্রাকৃতিক পণ্যের নিশ্চয়তা। সরাসরি উৎস থেকে সংগৃহীত।</p>
-            
             <div class="action-buttons">
-              <a href="https://wa.me/8801309476030?text=${waMessage}" class="btn-details btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp অর্ডার
-              </a>
-              <a href="tel:+8801309476030" class="btn-details btn-call">
-                <i class="fa fa-phone"></i> কল করুন
-              </a>
+              <a href="https://wa.me/8801309476030?text=${waMessage}" class="btn-details btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp অর্ডার</a>
+              <a href="tel:+8801309476030" class="btn-details btn-call"><i class="fa fa-phone"></i> কল করুন</a>
             </div>
           </div>
-        </div>
-      `;
-      document.title = product.name + " | Pure Khazana";
+        </div>`;
     } else {
-      displayArea.innerHTML = `
-        <div style="padding: 50px;">
-          <h3>দুঃখিত! পণ্যটি পাওয়া যায়নি।</h3>
-          <a href="product.html" class="btn-buy" style="margin-top:20px; text-decoration:none;">অন্যান্য পণ্য দেখুন</a>
-        </div>
-      `;
+      displayArea.innerHTML = `<h3>পণ্যটি পাওয়া যায়নি!</h3><a href="product.html">আবার দেখুন</a>`;
     }
   </script>
 </body>
