@@ -4,38 +4,44 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>পণ্য বিস্তারিত | Pure Khazana</title>
+  
   <link rel="stylesheet" href="style.css" />
+  
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
   <header class="site-header">
-    <a href="index.html" class="brand-logo">PURE KHAZANA</a>
-    <a href="javascript:history.back()" class="back-link"><i class="fa fa-arrow-left"></i></a>
+    <div class="container header-flex">
+      <a href="index.html" class="brand-logo">PURE KHAZANA</a>
+      <a href="javascript:history.back()" class="back-link"><i class="fa fa-arrow-left"></i></a>
+    </div>
   </header>
 
-  <div class="container" id="details-view">
-    <div style="padding: 50px; text-align: center;">ডাটা লোড হচ্ছে...</div>
-  </div>
+  <main class="container">
+    <div id="details-view">
+      <div style="padding: 100px 0; text-align: center;">ডাটা লোড হচ্ছে...</div>
+    </div>
 
-  <section class="trust-icons">
-    <div class="trust-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/1162/1162456.png" alt="Payment">
-      <h4>নিরাপদ পেমেন্ট</h4>
-      <p>বিভিন্ন পেমেন্ট পদ্ধতি</p>
-    </div>
-    <div class="trust-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/709/709790.png" alt="Delivery">
-      <h4>গ্রিন ডেলিভারি</h4>
-      <p>৩-৫ দিনের মধ্যে পৌঁছে যাবে</p>
-    </div>
-    <div class="trust-item">
-      <img src="https://cdn-icons-png.flaticon.com/512/2913/2913520.png" alt="Natural">
-      <h4>১০০% ন্যাচারাল</h4>
-      <p>প্রাকৃতিক উপাদান সম্বলিত</p>
-    </div>
-  </section>
+    <section class="trust-icons">
+      <div class="trust-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/1162/1162456.png" alt="Payment">
+        <h4>নিরাপদ পেমেন্ট</h4>
+        <p>ক্যাশ অন ডেলিভারি</p>
+      </div>
+      <div class="trust-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/709/709790.png" alt="Delivery">
+        <h4>ফ্রি ডেলিভারি</h4>
+        <p>সারা বাংলাদেশে</p>
+      </div>
+      <div class="trust-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/2913/2913520.png" alt="Natural">
+        <h4>১০০% ন্যাচারাল</h4>
+        <p>খাঁটি ও প্রাকৃতিক</p>
+      </div>
+    </section>
+  </main>
 
   <a href="index.html" class="bottom-nav">
     <div class="nav-item">
@@ -45,18 +51,16 @@
   </a>
 
   <script>
+    // আপনার পণ্যের তালিকা
     const products = [
       { id: 1, name: "Pure Ghee 1 KG", img: "https://i.ibb.co.com/3mhRZFTg/image.jpg", price: "1,500" },
       { id: 2, name: "Pure Ghee 500 gm", img: "https://i.ibb.co.com/FbhxyCSh/image.jpg", price: "800" },
       { id: 3, name: "Pure Ghee 250 gm", img: "https://i.ibb.co.com/RpLxk5Sc/image.jpg", price: "450" },
       { id: 4, name: "বরই মধু ১ কেজি", img: "assets/images/boroi-1kg.jpg", price: "950" },
       { id: 5, name: "বরই মধু ৫০০ গ্রাম", img: "assets/images/boroi-500g.jpg", price: "500" },
-      { id: 31, name: "বরই মধু ২৫০ গ্রাম", img: "assets/images/boroi-250g.jpg", price: "280" },
-      { id: 6, name: "কালোজিরা ১ কেজি", img: "assets/images/kj-1kg.jpg", price: "1,100" },
       { id: 22, name: "হানিনাট ১ কেজি", img: "assets/images/honeynut-1kg.jpg", price: "1,250" },
-      { id: 23, name: "হানিনাট ৫০০ গ্রাম", img: "assets/images/honeynut-500g.jpg", price: "650" },
-      { id: 24, name: "হানিনাট ২৫০ গ্রাম", img: "assets/images/honeynut-250g.jpg", price: "350" }
-      // আপনার বাকি সব প্রোডাক্টের আইডি ও তথ্য এখানে যোগ করতে পারেন...
+      { id: 23, name: "হানিনাট ৫০০ গ্রাম", img: "assets/images/honeynut-500g.jpg", price: "650" }
+      // প্রয়োজনে আরও আইডি এখানে যোগ করুন
     ];
 
     const params = new URLSearchParams(window.location.search);
@@ -66,7 +70,7 @@
     const displayArea = document.getElementById('details-view');
 
     if (product) {
-      const waMessage = encodeURIComponent(`আসসালামু আলাইকুম, আমি এই পণ্যটি কিনতে চাই:\nপণ্য: ${product.name}\nদাম: ${product.price} Tk`);
+      const waMessage = encodeURIComponent(`আসসালামু আলাইকুম, আমি আপনার এই পণ্যটি কিনতে চাই:\nপণ্য: ${product.name}\nদাম: ${product.price} টাকা`);
       
       displayArea.innerHTML = `
         <div class="product-detail-wrapper">
@@ -79,10 +83,10 @@
             <p class="p-price">Tk ${product.price}</p>
             
             <div class="qty-selector">
-              <span>Quantity</span>
+              <span style="font-weight:600; display:block; margin-bottom:5px;">Quantity</span>
               <div class="qty-controls">
                 <button onclick="changeQty(-1)">-</button>
-                <input type="number" id="qty" value="1" min="1">
+                <input type="number" id="qty" value="1" min="1" readonly>
                 <button onclick="changeQty(1)">+</button>
               </div>
             </div>
@@ -94,21 +98,25 @@
               <a href="https://wa.me/8801309476030?text=${waMessage}" class="btn-black">
                 <i class="fab fa-whatsapp"></i> WhatsApp Us
               </a>
-              <button class="btn-black"><i class="fab fa-facebook-messenger"></i> Chat with us</button>
+              <button class="btn-black">
+                <i class="fab fa-facebook-messenger"></i> Chat with us
+              </button>
             </div>
 
             <div class="description-box">
-              <div class="desc-header">
-                <h3>Description</h3>
-                <i class="fa fa-chevron-up"></i>
-              </div>
-              <p>১০০% খাঁটি ও প্রাকৃতিক পণ্যের নিশ্চয়তা। সরাসরি উৎস থেকে সংগৃহীত এবং স্বাস্থ্যসম্মত উপায়ে প্রক্রিয়াজাত করা হয়েছে।</p>
+              <h3>পণ্য সম্পর্কে বিস্তারিত:</h3>
+              <p>আমাদের প্রতিটি পণ্য শতভাগ বিশুদ্ধ ও প্রাকৃতিক। সরাসরি নিজস্ব তত্ত্বাবধানে সংগৃহীত এবং স্বাস্থ্যসম্মত উপায়ে প্যাকিং করা হয়েছে।</p>
             </div>
           </div>
         </div>
       `;
     } else {
-      displayArea.innerHTML = `<h3>পণ্যটি পাওয়া যায়নি!</h3><a href="product.html">আবার দেখুন</a>`;
+      displayArea.innerHTML = `
+        <div style="text-align:center; padding:50px;">
+          <h3>দুঃখিত! পণ্যটি পাওয়া যায়নি।</h3>
+          <a href="product.html" class="btn-order" style="display:inline-block; margin-top:20px; width:auto; padding:12px 30px;">সকল পণ্য দেখুন</a>
+        </div>
+      `;
     }
 
     function changeQty(val) {
