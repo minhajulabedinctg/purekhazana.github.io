@@ -3,202 +3,131 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Pure Khazana | প্রিমিয়াম অর্গানিক শপ</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>পিউর খাজানা | খাঁটি পণ্যের বিশ্বস্ত প্রতিষ্ঠান</title>
+  
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <style>
-    :root {
-      --primary: #1f7a4d;
-      --vibrant-red: #e74c3c;
-      --light-bg: #f9fafb;
-    }
-
-    body { font-family: 'Hind Siliguri', sans-serif; background: #fff; margin: 0; padding-bottom: 80px; }
-
-    .top-bar { background: var(--vibrant-red); color: white; text-align: center; padding: 10px; font-size: 13px; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-bar a { color: #fff; text-decoration: none; border-bottom: 1px dashed #fff; }
-
-    .site-header { padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    .brand-logo { font-size: 20px; font-weight: 800; color: var(--primary); text-decoration: none; }
-
-    .hero-banner { width: 100%; padding: 15px 0; text-align: center; }
-    .hero-banner img { width: 92%; border-radius: 12px; max-width: 1200px; }
-
-    .section-title { text-align: center; margin: 30px 0 20px; font-size: 24px; font-weight: 700; color: #222; }
-
-    .product-grid {
-      display: grid;
-      gap: 15px;
-      padding: 0 15px;
-      max-width: 1200px;
-      margin: 0 auto;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: 1024px) {
-      .product-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    .product-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
-
-    .product-card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; background: #fff; display: flex; flex-direction: column; position: relative; transition: transform 0.2s ease; height: 100%; }
-    .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-    /* ছবি সেন্টার এবং অ্যাডজাস্টমেন্ট */
-    .product-card img { 
-      width: 100%; 
-      height: 180px; 
-      object-fit: contain; 
-      padding: 10px; 
-      background: #fdfdfd;
-      margin: 0 auto;
-      display: block;
-    }
-
-    .product-info { padding: 12px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .product-info h3 { font-size: 14px; margin: 0 0 10px; height: 40px; overflow: hidden; color: #333; line-height: 1.4; }
-    .price { font-size: 16px; font-weight: 700; color: var(--primary); display: block; margin-bottom: 12px; }
-    .btn-buy { background: var(--primary); color: white; text-decoration: none; display: block; padding: 10px; border-radius: 8px; font-size: 14px; font-weight: 600; margin-top: auto; }
-
-    .form-section { padding: 40px 15px; background: var(--light-bg); margin-top: 40px; }
-    .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-    .form-container h3 { margin-bottom: 20px; color: var(--primary); text-align: center; font-size: 20px; }
-    .form-group { margin-bottom: 15px; text-align: left; }
-    .form-group label { display: block; font-size: 14px; margin-bottom: 5px; font-weight: 600; color: #555; }
-    .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: inherit; outline: none; }
-
-    .btn-submit { background: var(--vibrant-red); color: white; border: none; width: 100%; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: 0.3s; }
-    .btn-submit:hover { background: #c0392b; }
-
-    .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; border-top: 1px solid #eee; padding: 10px 0; z-index: 2000; }
-    .nav-item { flex: 1; text-align: center; color: #666; text-decoration: none; font-size: 11px; }
-    .nav-item i { display: block; font-size: 18px; margin-bottom: 3px; }
-  </style>
 </head>
 <body>
 
-  <div class="top-bar">
-    আমাদের যে কোন পণ্য অর্ডার করতে কল বা WhatsApp করুন: <a href="tel:+8801309476030">+8801309476030</a>
-  </div>
-
   <header class="site-header">
-    <a href="index.html" class="brand-logo">PURE KHAZANA</a>
-    <div class="header-right">
-      <i class="fa fa-search"></i>
-      <i class="fa fa-shopping-bag"></i>
+    <div class="container header-flex">
+      <a href="index.html" class="brand-logo">PURE KHAZANA</a>
+      <div class="header-icons">
+        <a href="#all-products" style="color: var(--primary);"><i class="fa fa-search"></i></a>
+      </div>
     </div>
   </header>
 
   <section class="hero-banner">
-    <img src="https://i.ibb.co.com/hxzZ1fsY/Pure-Khazana-Cover-1.jpg" alt="Pure Khazana Cover" class="banner-img">
-  </section>
-
-  <h2 class="section-title">আমাদের পণ্যসমূহ</h2>
-
-  <main class="product-grid" id="main-product-grid">
-  </main>
-
-  <section class="form-section">
-    <div class="form-container">
-      <h3>সরাসরি অর্ডার বা প্রশ্ন থাকলে লিখুন</h3>
-      <form id="orderForm">
-        <div class="form-group">
-          <label>আপনার নাম</label>
-          <input type="text" id="name" placeholder="আপনার নাম লিখুন" required>
-        </div>
-        <div class="form-group">
-          <label>মোবাইল নম্বর</label>
-          <input type="tel" id="phone" placeholder="০১৭XXXXXXXX" required>
-        </div>
-        <div class="form-group">
-          <label>বার্তা (পণ্যের নাম ও ঠিকানা)</label>
-          <textarea id="message" rows="4" placeholder="আপনি কি নিতে চান এবং আপনার ডেলিভারি ঠিকানা লিখুন..." required></textarea>
-        </div>
-        <button type="submit" class="btn-submit">WhatsApp এ পাঠান</button>
-      </form>
+    <div class="container">
+      <div class="hero-content">
+        <h1>প্রকৃতির সেরা উপহার, <br>আপনার হাতের নাগালে।</h1>
+        <p>১০০% খাঁটি ও প্রাকৃতিক মধু, ঘি এবং প্রিমিয়াম ফুড নিয়ে আমরা আছি আপনার পাশে।</p>
+        <a href="#all-products" class="btn-order" style="display:inline-block; width:auto; padding: 12px 30px;">পণ্যগুলো দেখুন</a>
+      </div>
     </div>
   </section>
 
-  <footer style="background: #fff; padding: 40px 15px; border-top: 1px solid #eee; text-align: center; margin-top: 20px;">
-    <div style="max-width: 800px; margin: 0 auto;">
-      <h2 style="color: var(--primary); font-size: 22px; margin-bottom: 15px;">আমাদের সম্পর্কে (About Us)</h2>
-      <p style="color: #666; line-height: 1.6; font-size: 15px; margin-bottom: 25px;">
-        <b>Pure Khazana</b> একটি বিশ্বস্ত অনলাইন শপ যেখানে আমরা সরাসরি খামার থেকে সংগৃহীত ১০০% বিশুদ্ধ ও অর্গানিক পণ্য আপনার দরজায় পৌঁছে দিই।
-      </p>
-      <div style="display: flex; justify-content: center; gap: 20px;">
-        <a href="https://www.facebook.com/PureKhazana" target="_blank" style="color: #1877F2; font-size: 28px;"><i class="fab fa-facebook"></i></a>
-        <a href="https://wa.me/8801309476030" target="_blank" style="color: #25D366; font-size: 28px;"><i class="fab fa-whatsapp"></i></a>
+  <main class="container">
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fa fa-leaf"></i>
+        <h3>১০০% খাঁটি</h3>
+      </div>
+      <div class="feature-card">
+        <i class="fa fa-truck"></i>
+        <h3>দ্রুত ডেলিভারি</h3>
+      </div>
+      <div class="feature-card">
+        <i class="fa fa-shield-halved"></i>
+        <h3>নিরাপদ পণ্য</h3>
+      </div>
+    </div>
+
+    <div class="section-header" id="all-products">
+      <h2 class="section-title">আমাদের সকল পণ্যসমূহ</h2>
+    </div>
+
+    <div class="product-grid" id="main-product-grid">
+      </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Pure Khazana. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/8801309476030"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </footer>
 
-  <nav class="bottom-nav">
-    <a href="index.html" class="nav-item"><i class="fa fa-home"></i><span>হোম</span></a>
-    <a href="products.html" class="nav-item"><i class="fa fa-th-large"></i><span>ক্যাটাগরি</span></a>
-    <a href="about.html" class="nav-item"><i class="fa fa-info-circle"></i><span>আমাদের কথা</span></a>
-    <a href="https://wa.me/8801309476030" class="nav-item"><i class="fab fa-whatsapp"></i><span>চ্যাট</span></a>
-  </nav>
+  <a href="index.html" class="bottom-nav">
+    <div class="nav-item">
+      <i class="fa fa-home"></i>
+      <span>হোম পেজ</span>
+    </div>
+  </a>
 
   <script>
     const products = [
-      { id: 1, name: "Pure Ghee 1 KG", price: "", img: "https://i.ibb.co.com/3mhRZFTg/image.jpg" },
-      { id: 2, name: "Pure Ghee 500 gm", price: "", img: "https://i.ibb.co.com/FbhxyCSh/image.jpg" },
-      { id: 3, name: "Pure Ghee 250 gm", price: "", img: "https://i.ibb.co.com/RpLxk5Sc/image.jpg" },
-      { id: 4, name: "বরই মধু ১ কেজি", price: "", img: "assets/images/boroi-1kg.jpg" },
-      { id: 5, name: "বরই মধু ৫০০ গ্রাম", price: "", img: "assets/images/boroi-500g.jpg" },
-      { id: 6, name: "কালোজিরা ১ কেজি", price: "", img: "assets/images/kj-1kg.jpg" },
-      { id: 7, name: "কালোজিরা ৫০০ গ্রাম", price: "", img: "assets/images/kj-500g.jpg" },
-      { id: 8, name: "গ্রামীন চাক ১ কেজি", price: "", img: "assets/images/chak-1kg.jpg" },
-      { id: 9, name: "গ্রামীন চাক ৫০০ গ্রাম", price: "", img: "assets/images/chak-500g.jpg" },
-      { id: 10, name: "লিচু ফুলের মধু ১ কেজি", price: "", img: "assets/images/lichu-1kg.jpg" },
-      { id: 11, name: "লিচু ফুলের মধু ৫০০ গ্রাম", price: "", img: "assets/images/lichu-500g.jpg" },
-      { id: 12, name: "সরিষা ফুলের মধু ১ কেজি", price: "", img: "assets/images/sorisha-1kg.jpg" },
-      { id: 13, name: "সরিষা ফুলের মধু ৫০০ গ্রাম", price: "", img: "assets/images/sorisha-500g.jpg" },
-      { id: 14, name: "সুন্দরবনের খলীশা মধু ১ কেজি", price: "", img: "assets/images/khalisha-1kg.jpg" },
-      { id: 15, name: "সুন্দরবনের খলীশা মধু ৫০০ গ্রাম", price: "", img: "assets/images/khalisha-500g.jpg" },
-      { id: 16, name: "সুন্দরবন মিশ্র (খলীশা+গরান) ১ কেজি", price: "", img: "assets/images/mishro-1kg.jpg" },
-      { id: 17, name: "সুন্দরবন মিশ্র (খলীশা+গরান) ৫০০ গ্রাম", price: "", img: "assets/images/mishro-500g.jpg" },
-      { id: 18, name: "সূর্যমুখী ফুলের মধু ১ কেজি", price: "", img: "assets/images/sunflower-1kg.jpg" },
-      { id: 19, name: "সূর্যমুখী ফুলের মধু ৫০০ গ্রাম", price: "", img: "assets/images/sunflower-500g.jpg" },
-      { id: 20, name: "ক্ষুদে মৌমাছির মধু ১ কেজি", price: "", img: "assets/images/khude-1kg.jpg" },
-      { id: 21, name: "ক্ষুদে মৌমাছির মধু ৫০০ গ্রাম", price: "", img: "assets/images/khude-500g.jpg" },
-      { id: 22, name: "হানিনাট ১ কেজি", price: "", img: "assets/images/honeynut-1kg.jpg" },
-      { id: 23, name: "হানিনাট ৫০০ গ্রাম", price: "", img: "assets/images/honeynut-500g.jpg" },
-      { id: 24, name: "হানিনাট ২৫০ গ্রাম", price: "", img: "assets/images/honeynut-250g.jpg" },
-      { id: 25, name: "আজওয়া", price: "", img: "assets/images/ajwa.jpg" },
-      { id: 26, name: "আজওয়া প্রিমিয়াম", price: "", img: "assets/images/ajwa-premium.jpg" },
-      { id: 27, name: "মরিয়ম", price: "", img: "assets/images/morium.jpg" },
-      { id: 28, name: "কালোজিরা+বরই+সরিষা ২৫০ কম্বো", price: "", img: "assets/images/combo1.jpg" },
-      { id: 29, name: "সুন্দরবন খলীশা + লিচু + মিশ্র ২৫০ কম্বো", price: "", img: "assets/images/combo2.jpg" },
-      { id: 30, name: "সুন্দরবন (খলীশা+গরান) + ক্ষুদে মৌমাছি + সূর্যমুখী ২৫০ কম্বো", price: "", img: "assets/images/combo3.jpg" }
+      { id: 1, name: "Pure Ghee 1 KG", img: "https://i.ibb.co.com/3mhRZFTg/image.jpg", price: "1,500" },
+      { id: 2, name: "Pure Ghee 500 gm", img: "https://i.ibb.co.com/FbhxyCSh/image.jpg", price: "800" },
+      { id: 3, name: "Pure Ghee 250 gm", img: "https://i.ibb.co.com/RpLxk5Sc/image.jpg", price: "450" },
+      { id: 4, name: "বরই মধু ১ কেজি", img: "assets/images/boroi-1kg.jpg", price: "950" },
+      { id: 5, name: "বরই মধু ৫০০ গ্রাম", img: "assets/images/boroi-500g.jpg", price: "500" },
+      { id: 31, name: "বরই মধু ২৫০ গ্রাম", img: "assets/images/boroi-250g.jpg", price: "280" },
+      { id: 6, name: "কালোজিরা ১ কেজি", img: "assets/images/kj-1kg.jpg", price: "1,100" },
+      { id: 7, name: "কালোজিরা ৫০০ গ্রাম", img: "assets/images/kj-500g.jpg", price: "600" },
+      { id: 32, name: "কালোজিরা ২৫০ গ্রাম", img: "assets/images/kj-250g.jpg", price: "320" },
+      { id: 8, name: "গ্রামীন চাক ১ কেজি", img: "assets/images/chak-1kg.jpg", price: "1,200" },
+      { id: 9, name: "গ্রামীন চাক ৫০০ গ্রাম", img: "assets/images/chak-500g.jpg", price: "650" },
+      { id: 33, name: "গ্রামীন চাক ২৫০ গ্রাম", img: "assets/images/chak-250g.jpg", price: "350" },
+      { id: 10, name: "লিচু ফুলের মধু ১ কেজি", img: "assets/images/lichu-1kg.jpg", price: "850" },
+      { id: 11, name: "লিচু ফুলের মধু ৫০০ গ্রাম", img: "assets/images/lichu-500g.jpg", price: "450" },
+      { id: 34, name: "লিচু ফুলের মধু ২৫০ গ্রাম", img: "assets/images/lichu-250g.jpg", price: "250" },
+      { id: 12, name: "সরীষা ফুলের মধু ১ কেজি", img: "assets/images/sorisha-1kg.jpg", price: "750" },
+      { id: 13, name: "সরীষা ফুলের মধু ৫০০ গ্রাম", img: "assets/images/sorisha-500g.jpg", price: "400" },
+      { id: 35, name: "সরীষা ফুলের মধু ২৫০ গ্রাম", img: "assets/images/sorisha-250g.jpg", price: "220" },
+      { id: 14, name: "সুন্দরবনের খলীশা মধু ১ কেজি", img: "assets/images/khalisha-1kg.jpg", price: "1,400" },
+      { id: 15, name: "সুন্দরবনের খলীশা মধু ৫০০ গ্রাম", img: "assets/images/khalisha-500g.jpg", price: "750" },
+      { id: 36, name: "সুন্দরবনের খলীশা মধু ২৫০ গ্রাম", img: "assets/images/khalisha-250g.jpg", price: "400" },
+      { id: 16, name: "সুন্দরবন মিশ্র মধু ১ কেজি", img: "assets/images/mishro-1kg.jpg", price: "900" },
+      { id: 17, name: "সুন্দরবন মিশ্র মধু ৫০০ গ্রাম", img: "assets/images/mishro-500g.jpg", price: "480" },
+      { id: 37, name: "সুন্দরবন মিশ্র মধু ২৫০ গ্রাম", img: "assets/images/mishro-250g.jpg", price: "250" },
+      { id: 18, name: "সূর্যমুখী মধু ১ কেজি", img: "assets/images/sunflower-1kg.jpg", price: "1,100" },
+      { id: 19, name: "সূর্যমুখী মধু ৫০০ গ্রাম", img: "assets/images/sunflower-500g.jpg", price: "600" },
+      { id: 38, name: "সূর্যমুখী মধু ২৫০ গ্রাম", img: "assets/images/sunflower-250g.jpg", price: "320" },
+      { id: 20, name: "ক্ষুদে মৌমাছি মধু ১ কেজি", img: "assets/images/khude-1kg.jpg", price: "1,800" },
+      { id: 21, name: "ক্ষুদে মৌমাছি মধু ৫০০ গ্রাম", img: "assets/images/khude-500g.jpg", price: "950" },
+      { id: 39, name: "ক্ষুদে মৌমাছি মধু ২৫০ গ্রাম", img: "assets/images/khude-250g.jpg", price: "500" },
+      { id: 22, name: "হানিনাট ১ কেজি", img: "assets/images/honeynut-1kg.jpg", price: "1,250" },
+      { id: 23, name: "হানিনাট ৫০০ গ্রাম", img: "assets/images/honeynut-500g.jpg", price: "650" },
+      { id: 24, name: "হানিনাট ২৫০ গ্রাম", img: "assets/images/honeynut-250g.jpg", price: "350" },
+      { id: 25, name: "আজওয়া খেজুর", img: "assets/images/ajwa.jpg", price: "900" },
+      { id: 26, name: "আজওয়া প্রিমিয়াম", img: "assets/images/ajwa-premium.jpg", price: "1,200" },
+      { id: 27, name: "মরিয়ম খেজুর", img: "assets/images/morium.jpg", price: "850" },
+      { id: 28, name: "কম্বো ১ (কালোজিরা+বরই+সরীষা)", img: "assets/images/combo1.jpg", price: "2,500" },
+      { id: 29, name: "কম্বো ২ (খলীশা+লিচু+মিশ্র)", img: "assets/images/combo2.jpg", price: "2,800" },
+      { id: 30, name: "কম্বো ৩ (সুন্দরবন+ক্ষুদে+সূর্যমুখী)", img: "assets/images/combo3.jpg", price: "3,500" }
     ];
 
     const grid = document.getElementById('main-product-grid');
     products.forEach(p => {
-      const priceHTML = p.price ? `<span class="price">৳ ${p.price}</span>` : "";
       grid.innerHTML += `
         <div class="product-card">
-          <a href="product-details.html?id=${p.id}" class="product-link">
+          <a href="product-details.html?id=${p.id}" style="text-decoration:none; color:inherit;">
             <img src="${p.img}" alt="${p.name}">
             <div class="product-info">
               <h3>${p.name}</h3>
-              ${priceHTML}
+              <p class="p-price" style="font-size: 16px; margin-bottom: 10px; color: var(--primary);">Tk ${p.price}</p>
               <div class="btn-buy">বিস্তারিত দেখুন</div>
             </div>
           </a>
-        </div>
-      `;
-    });
-
-    document.getElementById("orderForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const phone = document.getElementById("phone").value;
-      const message = document.getElementById("message").value;
-      const whatsappText = `নতুন অর্ডার/প্রশ্ন:\n\nনাম: ${name}\nমোবাইল: ${phone}\nবিস্তারিত: ${message}`;
-      window.open(`https://wa.me/8801309476030?text=${encodeURIComponent(whatsappText)}`, '_blank');
+        </div>`;
     });
   </script>
 </body>
