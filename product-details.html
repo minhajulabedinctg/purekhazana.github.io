@@ -3,118 +3,106 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Honey Nuts - Pure Khazana</title>
+  <title>পণ্য বিস্তারিত | Pure Khazana</title>
+  
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    /* ডিটেইলস পেজের জন্য বিশেষ কিছু ইনলাইন ফিক্স */
+    .product-flex { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
+    .product-img-box { flex: 1; min-width: 300px; }
+    .product-img-box img { width: 100%; border-radius: 12px; border: 1px solid #eee; }
+    .product-details-box { flex: 1; min-width: 300px; }
+    .price-tag { font-size: 24px; color: var(--primary); font-weight: 700; margin: 10px 0; }
+    
+    .qty-box { display: flex; align-items: center; gap: 10px; margin: 20px 0; }
+    .qty-btn { border: 1px solid #ddd; background: #fff; padding: 5px 15px; cursor: pointer; border-radius: 4px; }
+    .qty-input { width: 50px; text-align: center; border: 1px solid #ddd; padding: 5px; border-radius: 4px; }
+
+    /* বাটন স্টাইল */
+    .btn-group { display: flex; flex-direction: column; gap: 12px; }
+    .btn-cart { background: #000; color: #fff; padding: 15px; text-align: center; text-decoration: none; border-radius: 6px; font-weight: 600; }
+    .btn-order { background: #f39c12; color: #fff; padding: 15px; text-align: center; text-decoration: none; border-radius: 6px; font-weight: 700; }
+    .btn-social { background: #000; color: #fff; padding: 12px; text-align: center; text-decoration: none; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .whatsapp { background: #25d366; }
+    .messenger { background: #0084ff; }
+  </style>
 </head>
 <body>
 
   <header class="site-header">
-    <div class="container header-flex">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 0;">
       <a href="index.html" class="brand-logo">PURE KHAZANA</a>
-      <a href="javascript:history.back()" class="back-link"><i class="fa fa-arrow-left"></i></a>
+      <a href="javascript:history.back()" style="color: #666;"><i class="fa fa-arrow-left"></i></a>
     </div>
   </header>
 
   <main class="container">
-    <div class="product-detail-wrapper">
-      <div class="product-image-section">
-        <img src="https://i.ibb.co.com/FbhxyCSh/image.jpg" alt="Honey Nuts">
-      </div>
-      
-      <div class="product-info-section">
-        <h1 class="p-title">Honey Nuts/হানিনাট (৮০০গ্রাম)</h1>
-        <p class="p-price">Tk 1,500.00</p>
-        
-        <div class="qty-selector">
-          <span>Quantity</span>
-          <div class="qty-controls">
-            <button onclick="changeQty(-1)">-</button>
-            <input type="number" id="qty" value="1" readonly>
-            <button onclick="changeQty(1)">+</button>
-          </div>
+    <div id="product-content">
+      <div class="product-flex">
+        <div class="product-img-box">
+          <img src="https://i.ibb.co.com/FbhxyCSh/image.jpg" alt="Honey Nuts">
         </div>
-
-        <div class="buy-buttons">
-          <button class="btn-black-long">Add to cart</button>
-          <a href="tel:+8801309476030" class="btn-order-orange">
-            <i class="fa fa-shopping-cart"></i> ক্যাশ অন ডেলিভারিতে অর্ডার করুন
-          </a>
-          <button class="btn-black"><i class="fab fa-facebook-messenger"></i> Chat with us</button>
-          <a href="https://wa.me/8801309476030" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-        </div>
-
-        <div class="description-box">
-          <div class="desc-header">
-            <h3>Description</h3>
+        <div class="product-details-box">
+          <h1 style="font-size: 24px; line-height: 1.2;">Honey Nuts/হানিনাট (৮০০গ্রাম)</h1>
+          <p class="price-tag">Tk 1,500.00</p>
+          
+          <div class="qty-box">
+            <span>Quantity</span>
+            <button class="qty-btn" onclick="updateQty(-1)">-</button>
+            <input type="number" id="qty" value="1" class="qty-input" readonly>
+            <button class="qty-btn" onclick="updateQty(1)">+</button>
           </div>
-          <p>বাদাম এবং মধুর মধ্যে সম্পর্ক নতুন বলে মনে হতে পারে, কিন্তু বাদাম এবং মধুর ইতিহাস বেশ পুরনো। গবেষকদের মতে, ফল, সবজি ও মাংসের পাশাপাশি খাদ্য হিসেবে বাদামের চাহিদা অনেক আগে থেকেই রয়েছে। হানিনাট শরীরের শক্তি ও রোগ প্রতিরোধ ক্ষমতা বাড়াতে দারুণ কার্যকর।</p>
+
+          <div class="btn-group">
+            <a href="#" class="btn-cart">Add to cart</a>
+            <a href="tel:+8801309476030" class="btn-order"><i class="fa fa-shopping-cart"></i> ক্যাশ অন ডেলিভারিতে অর্ডার করুন</a>
+            <a href="#" class="btn-social messenger"><i class="fab fa-facebook-messenger"></i> Chat with us</a>
+            <a href="https://wa.me/8801309476030" class="btn-social whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+          </div>
+
+          <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+            <h4 style="margin-bottom: 10px;">Description</h4>
+            <p style="font-size: 14px; color: #555;">আমাদের হানিনাট অত্যন্ত পুষ্টিকর এবং সুস্বাদু। এটি প্রাকৃতিক মধু এবং প্রিমিয়াম কোয়ালিটির বাদামের মিশ্রণে তৈরি।</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <section class="trust-icons-bar">
-      <div class="trust-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/1162/1162456.png" alt="Payment">
-        <div>
-          <h4>নিরাপদ পেমেন্ট</h4>
-          <p>বিভিন্ন পেমেন্ট পদ্ধতি থেকে বেছে নিন</p>
+    <h3 style="margin: 40px 0 20px;">You Might Also Like</h3>
+    <div class="fb-feature-grid">
+      <div class="fb-custom-card">
+        <img src="https://i.ibb.co.com/3mhRZFTg/image.jpg" class="fb-card-img" alt="Ghee">
+        <div class="fb-card-body">
+          <h4>গাওয়া ঘি (১ কেজি)</h4>
+          <p>Tk 1,800.00</p>
+          <a href="#" class="fb-btn">Quick Add</a>
         </div>
       </div>
-      <div class="trust-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/709/709790.png" alt="Delivery">
-        <div>
-          <h4>গ্রিন ডেলিভারি</h4>
-          <p>৩-৫ দিনের মধ্যে আপনার পণ্য পৌঁছে যাবে</p>
+      <div class="fb-custom-card">
+        <img src="https://i.ibb.co.com/FbhxyCSh/image.jpg" class="fb-card-img" alt="Honey Nuts">
+        <div class="fb-card-body">
+          <h4>হানিনাটস (৫০০ গ্রাম)</h4>
+          <p>Tk 1,000.00</p>
+          <a href="#" class="fb-btn">Quick Add</a>
         </div>
       </div>
-      <div class="trust-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/2913/2913520.png" alt="Natural">
-        <div>
-          <h4>১০০% ন্যাচারাল</h4>
-          <p>প্রাকৃতিক উপাদান ব্যবহার করতে আমরা প্রতিশ্রুতিবদ্ধ</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="related-section">
-      <h2 class="section-title">You Might Also Like</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <div class="badge">ON SALE</div>
-          <img src="assets/images/honey.jpg" alt="Honey">
-          <div class="p-info">
-            <h3>কালোজিরা ফুলের মধু</h3>
-            <p class="price">Tk 1,440.00 <del>Tk 1,600.00</del></p>
-            <button class="quick-add">Quick Add</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="assets/images/nuts-500.jpg" alt="Nuts">
-          <div class="p-info">
-            <h3>Honey Nuts (৫০০ গ্রাম)</h3>
-            <p class="price">Tk 1,000.00</p>
-            <button class="quick-add">Quick Add</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="assets/images/dates.jpg" alt="Dates">
-          <div class="p-info">
-            <h3>Egyptian Medjool Large 1kg</h3>
-            <p class="price">Tk 2,200.00</p>
-            <button class="quick-add">Quick Add</button>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item active"><i class="fa fa-home"></i>হোম</a>
+    <a href="product.html" class="nav-item"><i class="fa fa-th-large"></i>পণ্য</a>
+    <a href="tel:+8801309476030" class="nav-item"><i class="fa fa-phone"></i>কল</a>
+  </nav>
+
   <script>
-    function changeQty(val) {
-      let qtyInput = document.getElementById('qty');
-      let currentVal = parseInt(qtyInput.value);
-      if (currentVal + val >= 1) qtyInput.value = currentVal + val;
+    function updateQty(val) {
+      let q = document.getElementById('qty');
+      let v = parseInt(q.value) + val;
+      if(v >= 1) q.value = v;
     }
   </script>
 </body>
