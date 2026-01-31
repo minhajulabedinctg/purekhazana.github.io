@@ -3,22 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>আমাদের সকল পণ্য | Pure Khazana</title>
+  <title>পিউর খাজানা | খাঁটি পণ্যের বিশ্বস্ত প্রতিষ্ঠান</title>
   
   <link rel="stylesheet" href="style.css" />
-  
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
   <header class="site-header">
-    <a href="index.html" class="brand-logo">PURE KHAZANA</a>
-    <i class="fa fa-shopping-bag" style="color: var(--primary); font-size: 20px;"></i>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="brand-logo">PURE KHAZANA</a>
+      <i class="fa fa-shopping-basket" style="color: var(--primary); font-size: 20px;"></i>
+    </div>
   </header>
 
-  <h2 class="section-title">আমাদের সকল পণ্যসমূহ</h2>
-  <main class="product-grid" id="main-product-grid"></main>
+  <section style="background: var(--primary); color: white; text-align: center; padding: 40px 20px;">
+    <h1 style="font-size: 24px; margin-bottom: 10px;">খাঁটি ও প্রাকৃতিক পণ্যের সমাহার</h1>
+    <p style="font-size: 14px; opacity: 0.9;">সরাসরি উৎস থেকে সংগৃহীত সেরা মানের পণ্য</p>
+  </section>
+
+  <main class="container">
+    <h2 class="section-title">আমাদের সকল পণ্যসমূহ</h2>
+
+    <div class="product-grid" id="main-product-grid">
+      </div>
+  </main>
 
   <a href="index.html" class="bottom-nav">
     <div class="nav-item">
@@ -29,45 +39,45 @@
 
   <script>
     const products = [
-      { id: 1, name: "Pure Ghee 1 KG", img: "https://i.ibb.co.com/3mhRZFTg/image.jpg" },
-      { id: 2, name: "Pure Ghee 500 gm", img: "https://i.ibb.co.com/FbhxyCSh/image.jpg" },
-      { id: 3, name: "Pure Ghee 250 gm", img: "https://i.ibb.co.com/RpLxk5Sc/image.jpg" },
-      { id: 4, name: "বরই মধু ১ কেজি", img: "assets/images/boroi-1kg.jpg" },
-      { id: 5, name: "বরই মধু ৫০০ গ্রাম", img: "assets/images/boroi-500g.jpg" },
-      { id: 31, name: "বরই মধু ২৫০ গ্রাম", img: "assets/images/boroi-250g.jpg" },
-      { id: 6, name: "কালোজিরা ১ কেজি", img: "assets/images/kj-1kg.jpg" },
-      { id: 7, name: "কালোজিরা ৫০০ গ্রাম", img: "assets/images/kj-500g.jpg" },
-      { id: 32, name: "কালোজিরা ২৫০ গ্রাম", img: "assets/images/kj-250g.jpg" },
-      { id: 8, name: "গ্রামীন চাক ১ কেজি", img: "assets/images/chak-1kg.jpg" },
-      { id: 9, name: "গ্রামীন চাক ৫০০ গ্রাম", img: "assets/images/chak-500g.jpg" },
-      { id: 33, name: "গ্রামীন চাক ২৫০ গ্রাম", img: "assets/images/chak-250g.jpg" },
-      { id: 10, name: "লিচু ফুলের মধু ১ কেজি", img: "assets/images/lichu-1kg.jpg" },
-      { id: 11, name: "লিচু ফুলের মধু ৫০০ গ্রাম", img: "assets/images/lichu-500g.jpg" },
-      { id: 34, name: "লিচু ফুলের মধু ২৫০ গ্রাম", img: "assets/images/lichu-250g.jpg" },
-      { id: 12, name: "সরীষা ফুলের মধু ১ কেজি", img: "assets/images/sorisha-1kg.jpg" },
-      { id: 13, name: "সরীষা ফুলের মধু ৫০০ গ্রাম", img: "assets/images/sorisha-500g.jpg" },
-      { id: 35, name: "সরীষা ফুলের মধু ২৫০ গ্রাম", img: "assets/images/sorisha-250g.jpg" },
-      { id: 14, name: "সুন্দরবনের খলীশা মধু ১ কেজি", img: "assets/images/khalisha-1kg.jpg" },
-      { id: 15, name: "সুন্দরবনের খলীশা মধু ৫০০ গ্রাম", img: "assets/images/khalisha-500g.jpg" },
-      { id: 36, name: "সুন্দরবনের খলীশা মধু ২৫০ গ্রাম", img: "assets/images/khalisha-250g.jpg" },
-      { id: 16, name: "সুন্দরবন মিশ্র মধু ১ কেজি", img: "assets/images/mishro-1kg.jpg" },
-      { id: 17, name: "সুন্দরবন মিশ্র মধু ৫০০ গ্রাম", img: "assets/images/mishro-500g.jpg" },
-      { id: 37, name: "সুন্দরবন মিশ্র মধু ২৫০ গ্রাম", img: "assets/images/mishro-250g.jpg" },
-      { id: 18, name: "সূর্যমুখী মধু ১ কেজি", img: "assets/images/sunflower-1kg.jpg" },
-      { id: 19, name: "সূর্যমুখী মধু ৫০০ গ্রাম", img: "assets/images/sunflower-500g.jpg" },
-      { id: 38, name: "সূর্যমুখী মধু ২৫০ গ্রাম", img: "assets/images/sunflower-250g.jpg" },
-      { id: 20, name: "ক্ষুদে মৌমাছি মধু ১ কেজি", img: "assets/images/khude-1kg.jpg" },
-      { id: 21, name: "ক্ষুদে মৌমাছি মধু ৫০০ গ্রাম", img: "assets/images/khude-500g.jpg" },
-      { id: 39, name: "ক্ষুদে মৌমাছি মধু ২৫০ গ্রাম", img: "assets/images/khude-250g.jpg" },
-      { id: 22, name: "হানিনাট ১ কেজি", img: "assets/images/honeynut-1kg.jpg" },
-      { id: 23, name: "হানিনাট ৫০০ গ্রাম", img: "assets/images/honeynut-500g.jpg" },
-      { id: 24, name: "হানিনাট ২৫০ গ্রাম", img: "assets/images/honeynut-250g.jpg" },
-      { id: 25, name: "আজওয়া খেজুর", img: "assets/images/ajwa.jpg" },
-      { id: 26, name: "আজওয়া প্রিমিয়াম", img: "assets/images/ajwa-premium.jpg" },
-      { id: 27, name: "মরিয়ম খেজুর", img: "assets/images/morium.jpg" },
-      { id: 28, name: "কম্বো ১ (কালোজিরা+বরই+সরীষা)", img: "assets/images/combo1.jpg" },
-      { id: 29, name: "কম্বো ২ (খলীশা+লিচু+মিশ্র)", img: "assets/images/combo2.jpg" },
-      { id: 30, name: "কম্বো ৩ (সুন্দরবন+ক্ষুদে+সূর্যমুখী)", img: "assets/images/combo3.jpg" }
+      { id: 1, name: "Pure Ghee 1 KG", img: "https://i.ibb.co.com/3mhRZFTg/image.jpg", price: "1,500" },
+      { id: 2, name: "Pure Ghee 500 gm", img: "https://i.ibb.co.com/FbhxyCSh/image.jpg", price: "800" },
+      { id: 3, name: "Pure Ghee 250 gm", img: "https://i.ibb.co.com/RpLxk5Sc/image.jpg", price: "450" },
+      { id: 4, name: "বরই মধু ১ কেজি", img: "assets/images/boroi-1kg.jpg", price: "950" },
+      { id: 5, name: "বরই মধু ৫০০ গ্রাম", img: "assets/images/boroi-500g.jpg", price: "500" },
+      { id: 31, name: "বরই মধু ২৫০ গ্রাম", img: "assets/images/boroi-250g.jpg", price: "280" },
+      { id: 6, name: "কালোজিরা ১ কেজি", img: "assets/images/kj-1kg.jpg", price: "1,100" },
+      { id: 7, name: "কালোজিরা ৫০০ গ্রাম", img: "assets/images/kj-500g.jpg", price: "600" },
+      { id: 32, name: "কালোজিরা ২৫০ গ্রাম", img: "assets/images/kj-250g.jpg", price: "320" },
+      { id: 8, name: "গ্রামীন চাক ১ কেজি", img: "assets/images/chak-1kg.jpg", price: "1,200" },
+      { id: 9, name: "গ্রামীন চাক ৫০০ গ্রাম", img: "assets/images/chak-500g.jpg", price: "650" },
+      { id: 33, name: "গ্রামীন চাক ২৫০ গ্রাম", img: "assets/images/chak-250g.jpg", price: "350" },
+      { id: 10, name: "লিচু ফুলের মধু ১ কেজি", img: "assets/images/lichu-1kg.jpg", price: "850" },
+      { id: 11, name: "লিচু ফুলের মধু ৫০০ গ্রাম", img: "assets/images/lichu-500g.jpg", price: "450" },
+      { id: 34, name: "লিচু ফুলের মধু ২৫০ গ্রাম", img: "assets/images/lichu-250g.jpg", price: "250" },
+      { id: 12, name: "সরীষা ফুলের মধু ১ কেজি", img: "assets/images/sorisha-1kg.jpg", price: "750" },
+      { id: 13, name: "সরীষা ফুলের মধু ৫০০ গ্রাম", img: "assets/images/sorisha-500g.jpg", price: "400" },
+      { id: 35, name: "সরীষা ফুলের মধু ২৫০ গ্রাম", img: "assets/images/sorisha-250g.jpg", price: "220" },
+      { id: 14, name: "সুন্দরবনের খলীশা মধু ১ কেজি", img: "assets/images/khalisha-1kg.jpg", price: "1,400" },
+      { id: 15, name: "সুন্দরবনের খলীশা মধু ৫০০ গ্রাম", img: "assets/images/khalisha-500g.jpg", price: "750" },
+      { id: 36, name: "সুন্দরবনের খলীশা মধু ২৫০ গ্রাম", img: "assets/images/khalisha-250g.jpg", price: "400" },
+      { id: 16, name: "সুন্দরবন মিশ্র মধু ১ কেজি", img: "assets/images/mishro-1kg.jpg", price: "900" },
+      { id: 17, name: "সুন্দরবন মিশ্র মধু ৫০০ গ্রাম", img: "assets/images/mishro-500g.jpg", price: "480" },
+      { id: 37, name: "সুন্দরবন মিশ্র মধু ২৫০ গ্রাম", img: "assets/images/mishro-250g.jpg", price: "250" },
+      { id: 18, name: "সূর্যমুখী মধু ১ কেজি", img: "assets/images/sunflower-1kg.jpg", price: "1,100" },
+      { id: 19, name: "সূর্যমুখী মধু ৫০০ গ্রাম", img: "assets/images/sunflower-500g.jpg", price: "600" },
+      { id: 38, name: "সূর্যমুখী মধু ২৫০ গ্রাম", img: "assets/images/sunflower-250g.jpg", price: "320" },
+      { id: 20, name: "ক্ষুদে মৌমাছি মধু ১ কেজি", img: "assets/images/khude-1kg.jpg", price: "1,800" },
+      { id: 21, name: "ক্ষুদে মৌমাছি মধু ৫০০ গ্রাম", img: "assets/images/khude-500g.jpg", price: "950" },
+      { id: 39, name: "ক্ষুদে মৌমাছি মধু ২৫০ গ্রাম", img: "assets/images/khude-250g.jpg", price: "500" },
+      { id: 22, name: "হানিনাট ১ কেজি", img: "assets/images/honeynut-1kg.jpg", price: "1,250" },
+      { id: 23, name: "হানিনাট ৫০০ গ্রাম", img: "assets/images/honeynut-500g.jpg", price: "650" },
+      { id: 24, name: "হানিনাট ২৫০ গ্রাম", img: "assets/images/honeynut-250g.jpg", price: "350" },
+      { id: 25, name: "আজওয়া খেজুর", img: "assets/images/ajwa.jpg", price: "900" },
+      { id: 26, name: "আজওয়া প্রিমিয়াম", img: "assets/images/ajwa-premium.jpg", price: "1,200" },
+      { id: 27, name: "মরিয়ম খেজুর", img: "assets/images/morium.jpg", price: "850" },
+      { id: 28, name: "কম্বো ১ (কালোজিরা+বরই+সরীষা)", img: "assets/images/combo1.jpg", price: "2,500" },
+      { id: 29, name: "কম্বো ২ (খলীশা+লিচু+মিশ্র)", img: "assets/images/combo2.jpg", price: "2,800" },
+      { id: 30, name: "কম্বো ৩ (সুন্দরবন+ক্ষুদে+সূর্যমুখী)", img: "assets/images/combo3.jpg", price: "3,500" }
     ];
 
     const grid = document.getElementById('main-product-grid');
@@ -78,6 +88,7 @@
             <img src="${p.img}" alt="${p.name}">
             <div class="product-info">
               <h3>${p.name}</h3>
+              <p style="color: var(--primary); font-weight: bold; margin-bottom: 8px;">Tk ${p.price}</p>
               <div class="btn-buy">বিস্তারিত দেখুন</div>
             </div>
           </a>
