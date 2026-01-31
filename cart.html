@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>আপনার শপিং ব্যাগ | Pure Khazana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body { font-family: 'Hind Siliguri', sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
+    .cart-container { max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h2 { color: #2d9d6a; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+    .cart-item { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; }
+    .cart-item img { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; }
+    .item-info { flex: 1; margin-left: 15px; }
+    .item-info h4 { margin: 0; font-size: 16px; }
+    .item-info p { margin: 5px 0; color: #2d9d6a; font-weight: bold; }
+    .qty-controls { display: flex; align-items: center; gap: 10px; }
+    .qty-btn { background: #eee; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    .total-section { margin-top: 20px; text-align: right; font-size: 18px; font-weight: 800; }
+    .checkout-btn { background: #25D366; color: white; display: block; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; margin-top: 20px; font-weight: bold; font-size: 18px; }
+    .back-btn { display: block; text-align: center; color: #666; margin-top: 15px; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="cart-container">
+  <h2>আপনার শপিং ব্যাগ</h2>
+  <div id="cart-items-list">
+    </div>
+  
+  <div class="total-section">
+    সর্বমোট: ৳ <span id="grand-total">0</span>
+  </div>
+
+  <a href="#" class="checkout-btn" onclick="sendWhatsAppOrder()">WhatsApp এ অর্ডার করুন</a>
+  <a href="index.html" class="back-btn"><i class="fa fa-arrow-left"></i> কেনাকাটা চালিয়ে যান</a>
+</div>
+
+<script>
+  let cart = JSON.parse(localStorage.getItem('pure_khazana_cart')) || [];
+
+  function renderCart() {
+    const list = document.getElementById('cart-items-list');
+    let total = 0;
+    list.innerHTML = '';
+
+    if (cart.length === 0) {
+      list.innerHTML = '<p style="text-align:center; padding: 20px;">আপনার ব্যাগ খালি!</p>';
+    }
+
+    cart.forEach((item, index) => {
+      total += item.price * item.qty;
+      list.innerHTML += `
+        <div class="cart-item">
+          <img src="${item.img}">
+          <div class="item-info">
+            <h4>${item.name}</h4>
+            <p>৳ ${item.price}</p>
+          </div>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="updateQty(${index}, -1)">-</button>
+            <span>${item.qty}</span>
+            <button class="qty-btn" onclick="updateQty(${index}, 1)">+</button>
+          </div>
+        </div>
+      `;
+    });
+    document.getElementById('grand-total').innerText = total;
+    localStorage.setItem('pure_khazana_cart', JSON.stringify(cart));
+  }
+
+  function updateQty(index, change) {
+    cart[index].qty += change;
+    if (cart[index].qty < 1) cart.splice(index, 1);
+    renderCart();
+  }
+
+  function sendWhatsAppOrder() {
+    if (cart.length === 0) return alert("ব্যাগ খালি!");
+    
+    let message = "নতুন অর্ডার (Pure Khazana):\n--------------------------\n";
+    let total = 0;
+    
+    cart.forEach(item => {
+      message += `• ${item.name} (${item.qty} টি) - ৳ ${item.price * item.qty}\n`;
+      total += item.price * item.qty;
+    });
+    
+    message += `--------------------------\nসর্বমোট: ৳ ${total}\n\nদয়া করে আমার অর্ডারটি কনফার্ম করুন।`;
+    
+    const whatsappUrl = `https://wa.me/8801309476030?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  }
+
+  renderCart();
+</script>
+
+</body>
+</html>
