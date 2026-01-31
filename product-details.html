@@ -2,107 +2,138 @@
 <html lang="bn">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>পণ্য বিস্তারিত | Pure Khazana</title>
-  
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>পণ্যের বিস্তারিত | Pure Khazana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
   <style>
-    /* ডিটেইলস পেজের জন্য বিশেষ কিছু ইনলাইন ফিক্স */
-    .product-flex { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
-    .product-img-box { flex: 1; min-width: 300px; }
-    .product-img-box img { width: 100%; border-radius: 12px; border: 1px solid #eee; }
-    .product-details-box { flex: 1; min-width: 300px; }
-    .price-tag { font-size: 24px; color: var(--primary); font-weight: 700; margin: 10px 0; }
+    :root { --primary: #2d9d6a; --vibrant-red: #e74c3c; }
+    body { font-family: 'Hind Siliguri', sans-serif; background: #fff; margin: 0; padding-bottom: 80px; color: #333; }
     
-    .qty-box { display: flex; align-items: center; gap: 10px; margin: 20px 0; }
-    .qty-btn { border: 1px solid #ddd; background: #fff; padding: 5px 15px; cursor: pointer; border-radius: 4px; }
-    .qty-input { width: 50px; text-align: center; border: 1px solid #ddd; padding: 5px; border-radius: 4px; }
+    .header { padding: 15px; display: flex; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
+    .back-btn { font-size: 20px; color: #333; text-decoration: none; margin-right: 15px; }
+    
+    .product-img-container { width: 100%; aspect-ratio: 1/1; background: #f9f9f9; overflow: hidden; }
+    .product-img-container img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .content-box { padding: 20px; }
+    .price-tag { font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 5px; display: block; }
+    .product-title { font-size: 22px; font-weight: 800; margin: 0 0 10px; line-height: 1.4; color: #1a1a1a; }
+    
+    .stock-badge { display: inline-block; background: #e8f5e9; color: #2d9d6a; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 15px; }
+    
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+    .info-item { background: #f9fafb; padding: 10px; border-radius: 8px; border: 1px solid #f0f0f0; font-size: 13px; text-align: center; }
+    .info-item i { color: var(--primary); margin-bottom: 5px; display: block; font-size: 18px; }
 
-    /* বাটন স্টাইল */
-    .btn-group { display: flex; flex-direction: column; gap: 12px; }
-    .btn-cart { background: #000; color: #fff; padding: 15px; text-align: center; text-decoration: none; border-radius: 6px; font-weight: 600; }
-    .btn-order { background: #f39c12; color: #fff; padding: 15px; text-align: center; text-decoration: none; border-radius: 6px; font-weight: 700; }
-    .btn-social { background: #000; color: #fff; padding: 12px; text-align: center; text-decoration: none; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 10px; }
-    .whatsapp { background: #25d366; }
-    .messenger { background: #0084ff; }
+    .description-box { margin-top: 10px; padding-top: 15px; border-top: 1px solid #eee; }
+    .description-box h3 { font-size: 18px; margin-bottom: 8px; color: #222; }
+    .description-box p { font-size: 15px; color: #555; line-height: 1.6; }
+    
+    .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; padding: 12px 15px; gap: 10px; border-top: 1px solid #eee; z-index: 2000; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); }
+    .btn { flex: 1; padding: 15px; border-radius: 8px; font-weight: 700; text-align: center; cursor: pointer; border: none; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
+    .add-to-cart { background: #fff; color: var(--primary); border: 2px solid var(--primary); }
+    .order-whatsapp { background: #25D366; color: white; }
   </style>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 0;">
-      <a href="index.html" class="brand-logo">PURE KHAZANA</a>
-      <a href="javascript:history.back()" style="color: #666;"><i class="fa fa-arrow-left"></i></a>
-    </div>
+  <header class="header">
+    <a href="index.html" class="back-btn"><i class="fa fa-arrow-left"></i></a>
+    <span style="font-weight: 700; font-size: 18px;">পণ্যের বিবরণ</span>
   </header>
 
-  <main class="container">
-    <div id="product-content">
-      <div class="product-flex">
-        <div class="product-img-box">
-          <img src="https://i.ibb.co.com/FbhxyCSh/image.jpg" alt="Honey Nuts">
-        </div>
-        <div class="product-details-box">
-          <h1 style="font-size: 24px; line-height: 1.2;">Honey Nuts/হানিনাট (৮০০গ্রাম)</h1>
-          <p class="price-tag">Tk 1,500.00</p>
-          
-          <div class="qty-box">
-            <span>Quantity</span>
-            <button class="qty-btn" onclick="updateQty(-1)">-</button>
-            <input type="number" id="qty" value="1" class="qty-input" readonly>
-            <button class="qty-btn" onclick="updateQty(1)">+</button>
-          </div>
-
-          <div class="btn-group">
-            <a href="#" class="btn-cart">Add to cart</a>
-            <a href="tel:+8801309476030" class="btn-order"><i class="fa fa-shopping-cart"></i> ক্যাশ অন ডেলিভারিতে অর্ডার করুন</a>
-            <a href="#" class="btn-social messenger"><i class="fab fa-facebook-messenger"></i> Chat with us</a>
-            <a href="https://wa.me/8801309476030" class="btn-social whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-          </div>
-
-          <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
-            <h4 style="margin-bottom: 10px;">Description</h4>
-            <p style="font-size: 14px; color: #555;">আমাদের হানিনাট অত্যন্ত পুষ্টিকর এবং সুস্বাদু। এটি প্রাকৃতিক মধু এবং প্রিমিয়াম কোয়ালিটির বাদামের মিশ্রণে তৈরি।</p>
-          </div>
-        </div>
-      </div>
+  <div id="product-details-content">
     </div>
 
-    <h3 style="margin: 40px 0 20px;">You Might Also Like</h3>
-    <div class="fb-feature-grid">
-      <div class="fb-custom-card">
-        <img src="https://i.ibb.co.com/3mhRZFTg/image.jpg" class="fb-card-img" alt="Ghee">
-        <div class="fb-card-body">
-          <h4>গাওয়া ঘি (১ কেজি)</h4>
-          <p>Tk 1,800.00</p>
-          <a href="#" class="fb-btn">Quick Add</a>
-        </div>
-      </div>
-      <div class="fb-custom-card">
-        <img src="https://i.ibb.co.com/FbhxyCSh/image.jpg" class="fb-card-img" alt="Honey Nuts">
-        <div class="fb-card-body">
-          <h4>হানিনাটস (৫০০ গ্রাম)</h4>
-          <p>Tk 1,000.00</p>
-          <a href="#" class="fb-btn">Quick Add</a>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <nav class="bottom-nav">
-    <a href="index.html" class="nav-item active"><i class="fa fa-home"></i>হোম</a>
-    <a href="product.html" class="nav-item"><i class="fa fa-th-large"></i>পণ্য</a>
-    <a href="tel:+8801309476030" class="nav-item"><i class="fa fa-phone"></i>কল</a>
-  </nav>
+  <div class="bottom-bar">
+    <button class="btn add-to-cart" onclick="addToCartDetailed()">কার্টে যোগ করুন</button>
+    <a href="#" id="wa-btn" class="btn order-whatsapp" onclick="directWhatsApp()">অর্ডার করুন <i class="fab fa-whatsapp"></i></a>
+  </div>
 
   <script>
-    function updateQty(val) {
-      let q = document.getElementById('qty');
-      let v = parseInt(q.value) + val;
-      if(v >= 1) q.value = v;
+    const products = [
+      // ঘি আইটেম
+      { id: 1, name: "Pure Ghee 1 KG", img: "https://i.ibb.co.com/3mhRZFTg/image.jpg", price: 1800 },
+      { id: 2, name: "Pure Ghee 500 gm", img: "https://i.ibb.co.com/FbhxyCSh/image.jpg", price: 900 },
+      { id: 3, name: "Pure Ghee 250 gm", img: "https://i.ibb.co.com/RpLxk5Sc/image.jpg", price: 450 },
+      // মধু আইটেম (২৫০ গ্রাম সহ)
+      { id: 6, name: "কালোজিরা মধু ১ কেজি", img: "https://i.ibb.co.com/847yLWwX/image.jpg", price: 1700 },
+      { id: 7, name: "কালোজিরা মধু ৫০০ গ্রাম", img: "https://i.ibb.co.com/YF1GykNL/image.jpg", price: 850 },
+      { id: 31, name: "কালোজিরা মধু ২৫০ গ্রাম", img: "https://i.ibb.co.com/847yLWwX/image.jpg", price: 450 },
+      
+      { id: 4, name: "বরই মধু ১ কেজি", img: "https://i.ibb.co.com/Nd5DdDCY/image.jpg", price: 1350 },
+      { id: 5, name: "বরই মধু ৫০০ গ্রাম", img: "https://i.ibb.co.com/5h5R3QNN/image.jpg", price: 675 },
+      { id: 32, name: "বরই মধু ২৫০ গ্রাম", img: "https://i.ibb.co.com/Nd5DdDCY/image.jpg", price: 350 },
+
+      { id: 8, name: "গ্রামীন চাক ১ কেজি", img: "https://i.ibb.co.com/WpKYRdRv/image.jpg", price: 1200 },
+      { id: 9, name: "গ্রামীন চাক ৫০০ গ্রাম", img: "https://i.ibb.co.com/tTJbHGZv/image.jpg", price: 650 },
+      { id: 33, name: "গ্রামীন চাক ২৫০ গ্রাম", img: "https://i.ibb.co.com/WpKYRdRv/image.jpg", price: 350 },
+
+      { id: 12, name: "সরিষা ফুলের মধু ১ কেজি", img: "https://i.ibb.co.com/k2x0pMrB/image.jpg", price: 750 },
+      { id: 13, name: "সরিষা ফুলের মধু ৫০০ গ্রাম", img: "https://i.ibb.co.com/9kRpbKMp/image.jpg", price: 400 },
+      { id: 34, name: "সরিষা ফুলের মধু ২৫০ গ্রাম", img: "https://i.ibb.co.com/k2x0pMrB/image.jpg", price: 220 },
+
+      { id: 14, name: "সুন্দরবনের খলীশা মধু ১ কেজি", img: "https://i.ibb.co.com/S4bLN5GH/image.jpg", price: 1400 },
+      { id: 15, name: "সুন্দরবনের খলীশা মধু ৫০০ গ্রাম", img: "https://i.ibb.co.com/zvFZPdF/image.jpg", price: 750 },
+      { id: 35, name: "সুন্দরবনের খলীশা মধু ২৫০ গ্রাম", img: "https://i.ibb.co.com/S4bLN5GH/image.jpg", price: 400 },
+
+      // হানিনাট
+      { id: 22, name: "হানিনাট ১ কেজি", img: "https://i.ibb.co.com/5hG68Tzq/image.jpg", price: 1250 },
+      { id: 23, name: "হানিনাট ৫০০ গ্রাম", img: "https://i.ibb.co.com/FbhxyCSh/image.jpg", price: 650 },
+      { id: 24, name: "হানিনাট ২৫০ গ্রাম", img: "https://i.ibb.co.com/RpLxk5Sc/image.jpg", price: 350 },
+
+      // খেজুর
+      { id: 25, name: "আজওয়া খেজুর", img: "https://i.ibb.co.com/PzWz7m2m/image.jpg", price: 900 },
+      { id: 26, name: "আজওয়া প্রিমিয়াম", img: "https://i.ibb.co.com/0R9XGvWz/image.jpg", price: 1200 },
+      { id: 27, name: "মরিয়ম খেজুর", img: "https://i.ibb.co.com/yFzN8Q8z/image.jpg", price: 850 },
+      
+      // কম্বো
+      { id: 28, name: "কম্বো ১", img: "https://i.ibb.co.com/Lz9XGvWz/image.jpg", price: 2500 },
+      { id: 29, name: "কম্বো ২", img: "https://i.ibb.co.com/Rz9XGvWz/image.jpg", price: 2800 },
+      { id: 30, name: "কম্বো ৩", img: "https://i.ibb.co.com/Tz9XGvWz/image.jpg", price: 3500 }
+    ];
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    const product = products.find(p => p.id == productId);
+
+    if (product) {
+      document.getElementById('product-details-content').innerHTML = `
+        <div class="product-img-container">
+          <img src="${product.img}" alt="${product.name}">
+        </div>
+        <div class="content-box">
+          <span class="stock-badge"><i class="fa fa-check-circle"></i> ১০০% খাঁটি পণ্য</span>
+          <h1 class="product-title">${product.name}</h1>
+          <span class="price-tag">৳ ${product.price}</span>
+          
+          <div class="info-grid">
+            <div class="info-item"><i class="fa fa-truck"></i> দ্রুত ডেলিভারি</div>
+            <div class="info-item"><i class="fa fa-shield-alt"></i> ক্যাশ অন ডেলিভারি</div>
+          </div>
+
+          <div class="description-box">
+            <h3>পণ্যের বিবরণ:</h3>
+            <p>Pure Khazana নিয়ে এসেছে প্রিমিয়াম কোয়ালিটির ${product.name}। আমরা সরাসরি খামার এবং বাগান থেকে বিশুদ্ধতা বজায় রেখে পণ্য সংগ্রহ করি। এতে কোনো প্রকার কৃত্রিম রং বা ক্ষতিকর কেমিক্যাল নেই। স্বাস্থ্যকর জীবনযাত্রায় আমাদের এই পণ্যটি হতে পারে আপনার নিত্যদিনের সঙ্গী।</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function addToCartDetailed() {
+      if (!product) return;
+      let cart = JSON.parse(localStorage.getItem('pure_khazana_cart')) || [];
+      const existing = cart.find(x => x.id == product.id);
+      if (existing) existing.qty++; else cart.push({...product, qty: 1});
+      localStorage.setItem('pure_khazana_cart', JSON.stringify(cart));
+      alert("পণ্যটি আপনার ব্যাগে যোগ করা হয়েছে! ✅");
+    }
+
+    function directWhatsApp() {
+      if (!product) return;
+      const m = `হ্যালো Pure Khazana, আমি এই পণ্যটি সরাসরি অর্ডার করতে চাই:\n\nপণ্য: ${product.name}\nদাম: ${product.price} TK\n\nআমার ডেলিভারি তথ্য দিতে সাহায্য করুন।`;
+      window.open(`https://wa.me/8801309476030?text=${encodeURIComponent(m)}`, '_blank');
     }
   </script>
 </body>
