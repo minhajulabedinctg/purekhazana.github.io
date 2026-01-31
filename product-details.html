@@ -1,146 +1,100 @@
-<!doctype html>
-<html lang="bn">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>প্রোডাক্ট ডিটেইলস | Pure Khazana</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <style>
-    :root { --primary: #1f7a4d; --vibrant-red: #e74c3c; --light-bg: #f9fafb; }
-    body { font-family: 'Hind Siliguri', sans-serif; background: #fff; margin: 0; padding-bottom: 80px; }
-    .site-header { padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
-    .brand-logo { font-size: 20px; font-weight: 800; color: var(--primary); text-decoration: none; }
-    
-    .container { max-width: 800px; margin: 20px auto; padding: 0 15px; text-align: center; }
-    .detail-card { background: #fff; border-radius: 15px; overflow: hidden; }
-    .detail-card img { width: 100%; max-height: 400px; object-fit: contain; background: #fdfdfd; padding: 20px; }
-    .detail-info { padding: 20px; }
-    .detail-info h2 { font-size: 24px; color: #333; margin-bottom: 10px; }
-    .price-tag { font-size: 22px; color: var(--primary); font-weight: 700; margin-bottom: 20px; display: block; }
-    
-    .action-buttons { display: flex; gap: 10px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
-    .btn { text-decoration: none; padding: 15px 25px; border-radius: 8px; font-weight: 700; font-size: 16px; flex: 1; min-width: 200px; cursor: pointer; border: none; }
-    .btn-whatsapp { background: #25d366; color: white; }
-    .btn-call { background: var(--primary); color: white; }
-    
-    .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; border-top: 1px solid #eee; padding: 10px 0; z-index: 2000; }
-    .nav-item { flex: 1; text-align: center; color: #666; text-decoration: none; font-size: 11px; }
-    .nav-item i { display: block; font-size: 18px; margin-bottom: 3px; }
-  </style>
-</head>
-<body>
-
-  <header class="site-header">
-    <a href="index.html" class="brand-logo">PURE KHAZANA</a>
-    <a href="index.html" style="color: #333;"><i class="fa fa-arrow-left"></i> ফিরে যান</a>
-  </header>
-
-  <div class="container" id="product-details">
-    <p>লোড হচ্ছে...</p>
-  </div>
-
-  <nav class="bottom-nav">
-    <a href="index.html" class="nav-item"><i class="fa fa-home"></i><span>হোম</span></a>
-    <a href="products.html" class="nav-item"><i class="fa fa-th-large"></i><span>ক্যাটাগরি</span></a>
-    <a href="https://wa.me/8801309476030" class="nav-item"><i class="fab fa-whatsapp"></i><span>চ্যাট</span></a>
-  </nav>
-
-  <script>
+<script>
     const products = [
-      // ঘি
+      // --- ঘি (৩টি সাইজ) ---
       { id: 1, name: "Pure Ghee 1 KG", price: "", img: "https://i.ibb.co.com/3mhRZFTg/image.jpg" },
       { id: 2, name: "Pure Ghee 500 gm", price: "", img: "https://i.ibb.co.com/FbhxyCSh/image.jpg" },
       { id: 3, name: "Pure Ghee 250 gm", price: "", img: "https://i.ibb.co.com/RpLxk5Sc/image.jpg" },
-      
-      // বরই মধু
+
+      // --- বরই মধু (৩টি সাইজ) ---
       { id: 4, name: "বরই মধু ১ কেজি", price: "", img: "assets/images/boroi-1kg.jpg" },
       { id: 5, name: "বরই মধু ৫০০ গ্রাম", price: "", img: "assets/images/boroi-500g.jpg" },
       { id: 31, name: "বরই মধু ২৫০ গ্রাম", price: "", img: "assets/images/boroi-250g.jpg" },
-      
-      // কালোজিরা মধু
+
+      // --- কালোজিরা (৩টি সাইজ) ---
       { id: 6, name: "কালোজিরা ১ কেজি", price: "", img: "assets/images/kj-1kg.jpg" },
       { id: 7, name: "কালোজিরা ৫০০ গ্রাম", price: "", img: "assets/images/kj-500g.jpg" },
       { id: 32, name: "কালোজিরা ২৫০ গ্রাম", price: "", img: "assets/images/kj-250g.jpg" },
-      
-      // গ্রামীন চাক
+
+      // --- গ্রামীন চাক (৩টি সাইজ) ---
       { id: 8, name: "গ্রামীন চাক ১ কেজি", price: "", img: "assets/images/chak-1kg.jpg" },
       { id: 9, name: "গ্রামীন চাক ৫০০ গ্রাম", price: "", img: "assets/images/chak-500g.jpg" },
       { id: 33, name: "গ্রামীন চাক ২৫০ গ্রাম", price: "", img: "assets/images/chak-250g.jpg" },
-      
-      // লিচু ফুলের মধু
+
+      // --- লিচু ফুলের মধু (৩টি সাইজ) ---
       { id: 10, name: "লিচু ফুলের মধু ১ কেজি", price: "", img: "assets/images/lichu-1kg.jpg" },
       { id: 11, name: "লিচু ফুলের মধু ৫০০ গ্রাম", price: "", img: "assets/images/lichu-500g.jpg" },
       { id: 34, name: "লিচু ফুলের মধু ২৫০ গ্রাম", price: "", img: "assets/images/lichu-250g.jpg" },
-      
-      // সরিষা ফুলের মধু
+
+      // --- সরিষা ফুলের মধু (৩টি সাইজ) ---
       { id: 12, name: "সরিষা ফুলের মধু ১ কেজি", price: "", img: "assets/images/sorisha-1kg.jpg" },
       { id: 13, name: "সরিষা ফুলের মধু ৫০০ গ্রাম", price: "", img: "assets/images/sorisha-500g.jpg" },
       { id: 35, name: "সরিষা ফুলের মধু ২৫০ গ্রাম", price: "", img: "assets/images/sorisha-250g.jpg" },
-      
-      // সুন্দরবনের খলীশা মধু
+
+      // --- সুন্দরবনের খলীশা মধু (৩টি সাইজ) ---
       { id: 14, name: "সুন্দরবনের খলীশা মধু ১ কেজি", price: "", img: "assets/images/khalisha-1kg.jpg" },
       { id: 15, name: "সুন্দরবনের খলীশা মধু ৫০০ গ্রাম", price: "", img: "assets/images/khalisha-500g.jpg" },
       { id: 36, name: "সুন্দরবনের খলীশা মধু ২৫০ গ্রাম", price: "", img: "assets/images/khalisha-250g.jpg" },
-      
-      // সুন্দরবন মিশ্র
+
+      // --- সুন্দরবন মিশ্র (৩টি সাইজ) ---
       { id: 16, name: "সুন্দরবন মিশ্র (খলীশা+গরান) ১ কেজি", price: "", img: "assets/images/mishro-1kg.jpg" },
       { id: 17, name: "সুন্দরবন মিশ্র (খলীশা+গরান) ৫০০ গ্রাম", price: "", img: "assets/images/mishro-500g.jpg" },
       { id: 37, name: "সুন্দরবন মিশ্র (খলীশা+গরান) ২৫০ গ্রাম", price: "", img: "assets/images/mishro-250g.jpg" },
-      
-      // সূর্যমুখী মধু
+
+      // --- সূর্যমুখী ফুলের মধু (৩টি সাইজ) ---
       { id: 18, name: "সূর্যমুখী ফুলের মধু ১ কেজি", price: "", img: "assets/images/sunflower-1kg.jpg" },
       { id: 19, name: "সূর্যমুখী ফুলের মধু ৫০০ গ্রাম", price: "", img: "assets/images/sunflower-500g.jpg" },
       { id: 38, name: "সূর্যমুখী ফুলের মধু ২৫০ গ্রাম", price: "", img: "assets/images/sunflower-250g.jpg" },
-      
-      // ক্ষুদে মৌমাছি
+
+      // --- ক্ষুদে মৌমাছির মধু (৩টি সাইজ) ---
       { id: 20, name: "ক্ষুদে মৌমাছির মধু ১ কেজি", price: "", img: "assets/images/khude-1kg.jpg" },
       { id: 21, name: "ক্ষুদে মৌমাছির মধু ৫০০ গ্রাম", price: "", img: "assets/images/khude-500g.jpg" },
       { id: 39, name: "ক্ষুদে মৌমাছির মধু ২৫০ গ্রাম", price: "", img: "assets/images/khude-250g.jpg" },
-      
-      // হানিনাট ও খেজুর
+
+      // --- হানিনাট ও খেজুর ---
       { id: 22, name: "হানিনাট ১ কেজি", price: "", img: "assets/images/honeynut-1kg.jpg" },
       { id: 23, name: "হানিনাট ৫০০ গ্রাম", price: "", img: "assets/images/honeynut-500g.jpg" },
       { id: 24, name: "হানিনাট ২৫০ গ্রাম", price: "", img: "assets/images/honeynut-250g.jpg" },
       { id: 25, name: "আজওয়া", price: "", img: "assets/images/ajwa.jpg" },
       { id: 26, name: "আজওয়া প্রিমিয়াম", price: "", img: "assets/images/ajwa-premium.jpg" },
       { id: 27, name: "মরিয়ম", price: "", img: "assets/images/morium.jpg" },
-      
-      // কম্বো
+
+      // --- কম্বো প্যাকেজ ---
       { id: 28, name: "কালোজিরা+বরই+সরিষা ২৫০ কম্বো", price: "", img: "assets/images/combo1.jpg" },
       { id: 29, name: "সুন্দরবন খলীশা + লিচু + মিশ্র ২৫০ কম্বো", price: "", img: "assets/images/combo2.jpg" },
       { id: 30, name: "সুন্দরবন (খলীশা+গরান) + ক্ষুদে মৌমাছি + সূর্যমুখী ২৫০ কম্বো", price: "", img: "assets/images/combo3.jpg" }
     ];
 
-    // URL থেকে আইডি বের করা
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = parseInt(urlParams.get('id'));
-    const product = products.find(p => p.id === productId);
-
-    if (product) {
-      const priceText = product.price ? `৳ ${product.price}` : "দাম জানতে যোগাযোগ করুন";
-      const whatsappLink = `https://wa.me/8801309476030?text=${encodeURIComponent("আসসালামু আলাইকুম, আমি এই প্রোডাক্টটি নিতে চাই:\n" + product.name)}`;
+    // গ্রিডে প্রোডাক্ট লোড করার লুপ কোড
+    const grid = document.getElementById('main-product-grid');
+    
+    products.forEach(p => {
+      // দাম না থাকলে প্রাইস ট্যাগ হাইড থাকবে
+      const priceHTML = p.price ? `<span class="price">৳ ${p.price}</span>` : "";
       
-      document.getElementById('product-details').innerHTML = `
-        <div class="detail-card">
-          <img src="${product.img}" alt="${product.name}">
-          <div class="detail-info">
-            <h2>${product.name}</h2>
-            <span class="price-tag">${priceText}</span>
-            <p style="color: #666; margin-bottom: 20px;">১০০% বিশুদ্ধ ও অর্গানিক পণ্যের নিশ্চয়তা।</p>
-            <div class="action-buttons">
-              <a href="${whatsappLink}" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp এ অর্ডার দিন</a>
-              <a href="tel:+8801309476030" class="btn btn-call"><i class="fa fa-phone"></i> কল করুন</a>
+      grid.innerHTML += `
+        <div class="product-card">
+          <a href="product-details.html?id=${p.id}" class="product-link">
+            <img src="${p.img}" alt="${p.name}">
+            <div class="product-info">
+              <h3>${p.name}</h3>
+              ${priceHTML}
+              <div class="btn-buy">বিস্তারিত দেখুন</div>
             </div>
-          </div>
+          </a>
         </div>
       `;
-      document.title = `${product.name} | Pure Khazana`;
-    } else {
-      document.getElementById('product-details').innerHTML = "<h3>দুঃখিত! প্রোডাক্টটি পাওয়া যায়নি।</h3>";
+    });
+
+    // WhatsApp ফরম হ্যান্ডলার (নিচে থাকা আগের কোডটি অপরিবর্তিত থাকল)
+    const orderForm = document.getElementById("orderForm");
+    if(orderForm) {
+        orderForm.addEventListener("submit", function(e) {
+          e.preventDefault();
+          const name = document.getElementById("name").value;
+          const phone = document.getElementById("phone").value;
+          const message = document.getElementById("message").value;
+          const whatsappText = `নতুন অর্ডার/প্রশ্ন:\n\nনাম: ${name}\nমোবাইল: ${phone}\nবিস্তারিত: ${message}`;
+          window.open(`https://wa.me/8801309476030?text=${encodeURIComponent(whatsappText)}`, '_blank');
+        });
     }
   </script>
-</body>
-</html>
