@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Pure Khazana | প্রিমিয়াম অর্গানিক শপ</title>
-  <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
@@ -17,81 +16,45 @@
 
     body { font-family: 'Hind Siliguri', sans-serif; background: #fff; margin: 0; padding-bottom: 80px; }
 
-    /* Top Bar & Header */
+    /* Header & Navigation */
     .top-bar { background: var(--vibrant-red); color: white; text-align: center; padding: 10px; font-size: 13px; font-weight: 600; }
     .top-bar a { color: #fff; text-decoration: none; border-bottom: 1px dashed #fff; }
     .site-header { padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
     .brand-logo { font-size: 20px; font-weight: 800; color: var(--primary); text-decoration: none; }
-
-    /* Cart Icon Container */
     .header-right { position: relative; cursor: pointer; display: flex; align-items: center; }
     #cart-count { position: absolute; top: -8px; right: -10px; background: var(--vibrant-red); color: white; border-radius: 50%; padding: 2px 6px; font-size: 10px; font-weight: bold; }
 
     /* Hero Banner */
     .hero-banner { width: 100%; text-align: center; padding: 10px 0; }
     .hero-banner img { width: 95%; border-radius: 12px; max-width: 1200px; }
-
     .section-title { text-align: center; margin: 30px 0 20px; font-size: 24px; font-weight: 700; color: #222; }
 
     /* Product Grid */
-    .product-grid {
-      display: grid;
-      gap: 15px;
-      padding: 0 15px;
-      max-width: 1200px;
-      margin: 0 auto;
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .product-grid { display: grid; gap: 15px; padding: 0 15px; max-width: 1200px; margin: 0 auto; grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
 
-    @media (min-width: 1024px) {
-      .product-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    /* Product Card */
-    .product-card { 
-      border: 1px solid #efefef; 
-      border-radius: 12px; 
-      overflow: hidden; 
-      background: #fff; 
-      position: relative; 
-      transition: 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
+    /* Product Card Stylings */
+    .product-card { border: 1px solid #efefef; border-radius: 12px; overflow: hidden; background: #fff; position: relative; transition: 0.3s; display: flex; flex-direction: column; }
     .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
-
     .badge-container { position: absolute; top: 10px; right: 10px; z-index: 5; display: flex; flex-direction: column; gap: 5px; }
     .discount-badge { background: #2d9d6a; color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
-    .hot-badge { background: #e74c3c; color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
-
-    /* Image Box (800x800 Support) */
     .img-box { width: 100%; aspect-ratio: 1 / 1; background: #fdfdfd; overflow: hidden; }
     .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* Info & Spacing */
+    /* Title & Price Update */
     .product-info { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; }
-    .product-info h3 { 
-        font-size: 18px; 
-        font-weight: 800; 
-        margin: 0 0 2px; /* টাইটেল ও প্রাইজের গ্যাপ কমানো হয়েছে */
-        color: #1a1a1a; 
-        line-height: 1.3; 
-        height: auto; 
-        max-height: 48px; 
-        overflow: hidden; 
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
-    
-    .price-box { margin-bottom: 12px; }
-    .current-price { color: var(--primary); font-weight: 700; font-size: 18px; }
+    .product-info h3 { font-size: 18px; font-weight: 800; margin: 0 0 2px; color: #1a1a1a; line-height: 1.3; height: auto; max-height: 48px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .current-price { color: var(--primary); font-weight: 700; font-size: 18px; margin-bottom: 10px; display: block; }
 
-    /* Buttons */
     .btn-group { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
-    .btn-action { text-align: center; padding: 12px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; border: none; cursor: pointer; transition: 0.3s; }
+    .btn-action { text-align: center; padding: 12px; border-radius: 6px; font-size: 14px; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; text-decoration: none; }
     .btn-add-cart { background: #fff; color: #2d9d6a; border: 1.5px solid #2d9d6a; }
     .btn-buy-now { background: #2d9d6a; color: white; }
+
+    /* Quick Order Form */
+    .quick-order-section { padding: 25px 20px; background: #f9fafb; margin: 30px 15px; border-radius: 15px; border: 1px dashed #2d9d6a; }
+    .quick-order-section input, .quick-order-section textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; margin-bottom: 15px; box-sizing: border-box; }
+    .quick-order-btn { background: #25D366; color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; width: 100%; font-size: 16px; cursor: pointer; }
 
     /* Bottom Nav */
     .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; border-top: 1px solid #eee; padding: 10px 0; z-index: 2000; }
@@ -102,14 +65,13 @@
 <body>
 
   <div class="top-bar">
-    আমাদের যে কোন পণ্য অর্ডার করতে কল বা WhatsApp করুন: <a href="tel:+8801309476030">+8801309476030</a>
+    অর্ডার করতে কল বা WhatsApp করুন: <a href="tel:+8801309476030">+8801309476030</a>
   </div>
 
   <header class="site-header">
     <a href="index.html" class="brand-logo">PURE KHAZANA</a>
     <div class="header-right" onclick="window.location.href='cart.html'">
-      <i class="fa fa-search" style="margin-right: 15px;"></i>
-      <i class="fa fa-shopping-bag"></i>
+      <i class="fa fa-shopping-bag" style="font-size: 20px;"></i>
       <span id="cart-count">0</span>
     </div>
   </header>
@@ -119,13 +81,40 @@
   </section>
 
   <h2 class="section-title">আমাদের পণ্যসমূহ</h2>
-
   <main class="product-grid" id="main-product-grid"></main>
+
+  <section class="quick-order-section">
+      <h3 style="text-align: center; margin-bottom: 20px;">সরাসরি অর্ডার ফর্ম</h3>
+      <input type="text" id="quick-name" placeholder="আপনার নাম">
+      <input type="tel" id="quick-phone" placeholder="মোবাইল নম্বর">
+      <textarea id="quick-address" placeholder="আপনার সম্পূর্ণ ঠিকানা" rows="3"></textarea>
+      <button onclick="quickOrder()" class="quick-order-btn"><i class="fab fa-whatsapp"></i> WhatsApp এ অর্ডার দিন</button>
+  </section>
+
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 15px; background: #fff;">
+      <div style="background: #f0f9f4; padding: 15px; border-radius: 10px; text-align: center; border: 1px solid #dcfce7;">
+          <i class="fa fa-truck" style="font-size: 24px; color: var(--primary);"></i>
+          <h4 style="margin: 5px 0 0; font-size: 14px;">ফ্রি ডেলিভারি</h4>
+      </div>
+      <div style="background: #fef2f2; padding: 15px; border-radius: 10px; text-align: center; border: 1px solid #fee2e2;">
+          <i class="fa fa-hand-holding-usd" style="font-size: 24px; color: var(--vibrant-red);"></i>
+          <h4 style="margin: 5px 0 0; font-size: 14px;">ক্যাশ অন ডেলিভারি</h4>
+      </div>
+  </div>
+
+  <footer style="padding: 30px 15px 100px; background: #222; color: #fff; text-align: center;">
+      <h3 style="color: var(--primary);">Pure Khazana</h3>
+      <div style="display: flex; justify-content: center; gap: 15px; margin: 20px 0;">
+          <a href="#" style="color:white; background:#3b5998; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center;"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/8801309476030" style="color:white; background:#25D366; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center;"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" style="color:white; background:red; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center;"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p style="font-size: 11px; color: #555;">&copy; 2026 Pure Khazana | All Rights Reserved.</p>
+  </footer>
 
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item"><i class="fa fa-home"></i><span>হোম</span></a>
-    <a href="#" class="nav-item"><i class="fa fa-th-large"></i><span>ক্যাটাগরি</span></a>
-    <a href="#" class="nav-item"><i class="fa fa-info-circle"></i><span>আমাদের কথা</span></a>
+    <a href="cart.html" class="nav-item"><i class="fa fa-shopping-cart"></i><span>কার্ট</span></a>
     <a href="https://wa.me/8801309476030" class="nav-item"><i class="fab fa-whatsapp"></i><span>চ্যাট</span></a>
   </nav>
 
@@ -158,68 +147,54 @@
       { id: 25, name: "আজওয়া খেজুর", img: "https://i.ibb.co.com/PzWz7m2m/image.jpg", price: 900 },
       { id: 26, name: "আজওয়া প্রিমিয়াম", img: "https://i.ibb.co.com/0R9XGvWz/image.jpg", price: 1200 },
       { id: 27, name: "মরিয়ম খেজুর", img: "https://i.ibb.co.com/yFzN8Q8z/image.jpg", price: 850 },
-      { id: 28, name: "কম্বো ১ (২৫০ গ্রাম)", img: "https://i.ibb.co.com/Lz9XGvWz/image.jpg", price: 2500 },
-      { id: 29, name: "কম্বো ২ (২৫০ গ্রাম)", img: "https://i.ibb.co.com/Rz9XGvWz/image.jpg", price: 2800 },
-      { id: 30, name: "কম্বো ৩ (২৫০ গ্রাম)", img: "https://i.ibb.co.com/Tz9XGvWz/image.jpg", price: 3500 }
+      { id: 28, name: "কম্বো ১", img: "https://i.ibb.co.com/Lz9XGvWz/image.jpg", price: 2500 },
+      { id: 29, name: "কম্বো ২", img: "https://i.ibb.co.com/Rz9XGvWz/image.jpg", price: 2800 },
+      { id: 30, name: "কম্বো ৩", img: "https://i.ibb.co.com/Tz9XGvWz/image.jpg", price: 3500 }
     ];
 
     const grid = document.getElementById('main-product-grid');
     products.forEach(p => {
-      grid.innerHTML += `
-        <div class="product-card">
-          <div class="badge-container">
-            <span class="discount-badge">SAVE</span>
-            <span class="hot-badge">HOT</span>
-          </div>
-          <div class="img-box">
-             <a href="product-details.html?id=${p.id}"><img src="${p.img}" alt="${p.name}"></a>
-          </div>
+      grid.innerHTML += `<div class="product-card">
+          <div class="badge-container"><span class="discount-badge">SAVE</span></div>
+          <div class="img-box"><img src="${p.img}"></div>
           <div class="product-info">
             <h3>${p.name}</h3>
-            <div class="price-box"><span class="current-price">৳ ${p.price}</span></div>
+            <span class="current-price">৳ ${p.price}</span>
             <div class="btn-group">
               <button class="btn-action btn-add-cart" data-id="${p.id}">ADD TO CART</button>
-              <a href="product-details.html?id=${p.id}" class="btn-action btn-buy-now">BUY NOW</a>
+              <button class="btn-action btn-buy-now" onclick="window.location.href='cart.html'">BUY NOW</button>
             </div>
           </div>
-        </div>
-      `;
+        </div>`;
     });
 
-    // Cart System Logic
     let cart = JSON.parse(localStorage.getItem('pure_khazana_cart')) || [];
-
     function updateCartCount() {
-        const count = cart.reduce((sum, item) => sum + item.qty, 0);
-        document.getElementById('cart-count').innerText = count;
+        document.getElementById('cart-count').innerText = cart.reduce((s, i) => s + i.qty, 0);
         localStorage.setItem('pure_khazana_cart', JSON.stringify(cart));
     }
 
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', e => {
         if (e.target.classList.contains('btn-add-cart')) {
-            const productId = e.target.getAttribute('data-id');
-            const product = products.find(p => p.id == productId);
-            
-            const existing = cart.find(item => item.id == productId);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({ ...product, qty: 1 });
-            }
-
+            const p = products.find(x => x.id == e.target.dataset.id);
+            const ex = cart.find(x => x.id == p.id);
+            if (ex) ex.qty++; else cart.push({...p, qty: 1});
             updateCartCount();
-            
-            // Visual feedback
-            const originalText = e.target.innerText;
             e.target.innerText = "ADDED! ✅";
-            e.target.style.background = "#e8f5e9";
-            setTimeout(() => { 
-                e.target.innerText = originalText; 
-                e.target.style.background = "#fff";
-            }, 1000);
+            setTimeout(() => e.target.innerText = "ADD TO CART", 1000);
         }
     });
 
+    function quickOrder() {
+        const n = document.getElementById('quick-name').value;
+        const ph = document.getElementById('quick-phone').value;
+        const ad = document.getElementById('quick-address').value;
+        if (!n || !ph || !ad || cart.length === 0) return alert("তথ্য দিন এবং পণ্য কার্টে যোগ করুন!");
+        let m = `*অর্ডার - Pure Khazana*\n👤 নাম: ${n}\n📞 ফোন: ${ph}\n📍 ঠিকানা: ${ad}\n------------------\n`;
+        let t = 0; cart.forEach(i => { m += `• ${i.name} (${i.qty}টি)\n`; t += i.price * i.qty; });
+        m += `------------------\n💰 মোট: ${t} TK`;
+        window.open(`https://wa.me/8801309476030?text=${encodeURIComponent(m)}`, '_blank');
+    }
     updateCartCount();
   </script>
 </body>
