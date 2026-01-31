@@ -43,10 +43,10 @@
       .product-grid { grid-template-columns: repeat(4, 1fr); }
     }
 
-    /* Product Card */
+    /* Product Card Updated for 800x800 images */
     .product-card { 
       border: 1px solid #efefef; 
-      border-radius: 15px; 
+      border-radius: 12px; 
       overflow: hidden; 
       background: #fff; 
       position: relative; 
@@ -55,25 +55,48 @@
       flex-direction: column;
     }
     
-    .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
 
     .badge-container { position: absolute; top: 10px; right: 10px; z-index: 5; display: flex; flex-direction: column; gap: 5px; }
-    .discount-badge { background: var(--primary); color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
-    .hot-badge { background: var(--vibrant-red); color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
+    .discount-badge { background: #2d9d6a; color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
+    .hot-badge { background: #e74c3c; color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
 
-    .img-box { width: 100%; height: 200px; background: #fdfdfd; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .img-box img { width: 100%; height: 100%; object-fit: cover; }
+    /* ইমেজ বক্স ফিক্সড (Square 1:1 Aspect Ratio) */
+    .img-box { 
+      width: 100%; 
+      aspect-ratio: 1 / 1; 
+      background: #fdfdfd; 
+      overflow: hidden; 
+    }
+    .img-box img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; /* ছবি পুরো বক্স জুড়ে সুন্দরভাবে বসবে */
+      display: block;
+    }
 
-    .product-info { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
-    .product-info h3 { font-size: 14px; margin: 0 0 8px; color: #333; font-weight: 600; line-height: 1.4; height: 42px; overflow: hidden; }
+    .product-info { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; }
+    .product-info h3 { font-size: 15px; margin: 0 0 8px; color: #333; font-weight: 600; line-height: 1.4; height: 42px; overflow: hidden; text-align: left; }
     
-    .price-box { margin-bottom: 12px; }
-    .current-price { color: var(--primary); font-weight: 700; font-size: 17px; }
+    .price-box { margin-bottom: 12px; text-align: left; }
+    .current-price { color: var(--primary); font-weight: 700; font-size: 18px; }
 
+    /* বাটন স্টাইল (আপনার স্ক্রিনশটের মতো নিখুঁত সবুজ) */
     .btn-group { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
-    .btn-action { text-align: center; padding: 10px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; border: none; cursor: pointer; }
-    .btn-add-cart { background: #fff; color: var(--primary); border: 2px solid var(--primary); }
-    .btn-buy-now { background: var(--primary); color: white; }
+    .btn-action { text-align: center; padding: 12px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; border: none; cursor: pointer; transition: 0.3s; }
+    
+    .btn-add-cart { 
+      background: #fff; 
+      color: #2d9d6a; 
+      border: 1.5px solid #2d9d6a; 
+    }
+    .btn-add-cart:hover { background: #f0fdf4; }
+
+    .btn-buy-now { 
+      background: #2d9d6a; 
+      color: white; 
+    }
+    .btn-buy-now:hover { background: #25855a; }
 
     .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; border-top: 1px solid #eee; padding: 10px 0; z-index: 2000; }
     .nav-item { flex: 1; text-align: center; color: #666; text-decoration: none; font-size: 11px; }
@@ -89,8 +112,8 @@
   <header class="site-header">
     <a href="index.html" class="brand-logo">PURE KHAZANA</a>
     <div class="header-right">
-      <i class="fa fa-search" style="margin-right: 15px;"></i>
-      <i class="fa fa-shopping-bag"></i>
+      <i class="fa fa-search" style="margin-right: 15px; cursor: pointer;"></i>
+      <i class="fa fa-shopping-bag" style="cursor: pointer;"></i>
     </div>
   </header>
 
@@ -124,30 +147,33 @@
       { id: 13, name: "সরিষা ফুলের মধু ৫০০ গ্রাম", img: "https://i.ibb.co.com/9kRpbKMp/image.jpg", price: "400" },
       { id: 14, name: "সুন্দরবনের খলীশা মধু ১ কেজি", img: "https://i.ibb.co.com/S4bLN5GH/image.jpg", price: "1400" },
       { id: 15, name: "সুন্দরবনের খলীশা মধু ৫০০ গ্রাম", img: "https://i.ibb.co.com/zvFZPdF/image.jpg", price: "750" },
-      { id: 10, name: "লিচু ফুলের মধু ১ কেজি", img: "assets/images/lichu-1kg.jpg", price: "850" },
-      { id: 11, name: "লিচু ফুলের মধু ৫০০ গ্রাম", img: "assets/images/lichu-500g.jpg", price: "450" },
-      { id: 16, name: "সুন্দরবন মিশ্র মধু ১ কেজি", img: "assets/images/mishro-1kg.jpg", price: "900" },
-      { id: 17, name: "সুন্দরবন মিশ্র মধু ৫০০ গ্রাম", img: "assets/images/mishro-500g.jpg", price: "480" },
-      { id: 18, name: "সূর্যমুখী মধু ১ কেজি", img: "assets/images/sunflower-1kg.jpg", price: "1100" },
-      { id: 19, name: "সূর্যমুখী মধু ৫০০ গ্রাম", img: "assets/images/sunflower-500g.jpg", price: "600" },
-      { id: 20, name: "ক্ষুদে মৌমাছি মধু ১ কেজি", img: "assets/images/khude-1kg.jpg", price: "1800" },
-      { id: 21, name: "ক্ষুদে মৌমাছি মধু ৫০০ গ্রাম", img: "assets/images/khude-500g.jpg", price: "950" },
-      { id: 22, name: "হানিনাট ১ কেজি", img: "assets/images/honeynut-1kg.jpg", price: "1250" },
-      { id: 23, name: "হানিনাট ৫০০ গ্রাম", img: "assets/images/honeynut-500g.jpg", price: "650" },
-      { id: 24, name: "হানিনাট ২৫০ গ্রাম", img: "assets/images/honeynut-250g.jpg", price: "350" },
-      { id: 25, name: "আজওয়া খেজুর", img: "assets/images/ajwa.jpg", price: "900" },
-      { id: 26, name: "আজওয়া প্রিমিয়াম", img: "assets/images/ajwa-premium.jpg", price: "1200" },
-      { id: 27, name: "মরিয়ম খেজুর", img: "assets/images/morium.jpg", price: "850" },
-      { id: 28, name: "কম্বো ১ (২৫০ গ্রাম)", img: "assets/images/combo1.jpg", price: "2500" },
-      { id: 29, name: "কম্বো ২ (২৫০ গ্রাম)", img: "assets/images/combo2.jpg", price: "2800" },
-      { id: 30, name: "কম্বো ৩ (২৫০ গ্রাম)", img: "assets/images/combo3.jpg", price: "3500" }
+      { id: 10, name: "লিচু ফুলের মধু ১ কেজি", img: "https://i.ibb.co.com/319yGrtV/image.jpg", price: "850" },
+      { id: 11, name: "লিচু ফুলের মধু ৫০০ গ্রাম", img: "https://i.ibb.co.com/LhB60V4g/image.jpg", price: "450" },
+      { id: 16, name: "সুন্দরবন মিশ্র মধু ১ কেজি", img: "https://i.ibb.co.com/mCrX9tq3/image.jpg", price: "900" },
+      { id: 17, name: "সুন্দরবন মিশ্র মধু ৫০০ গ্রাম", img: "https://i.ibb.co.com/fVzLrjK8/image.jpg", price: "480" },
+      { id: 18, name: "সূর্যমুখী মধু ১ কেজি", img: "https://i.ibb.co.com/S7WqD3P1/image.jpg", price: "1100" },
+      { id: 19, name: "সূর্যমুখী মধু ৫০০ গ্রাম", img: "https://i.ibb.co.com/9N5XG5fR/image.jpg", price: "600" },
+      { id: 20, name: "ক্ষুদে মৌমাছি মধু ১ কেজি", img: "https://i.ibb.co.com/vH4v9qYm/image.jpg", price: "1800" },
+      { id: 21, name: "ক্ষুদে মৌমাছি মধু ৫০০ গ্রাম", img: "https://i.ibb.co.com/PZ8rRz4v/image.jpg", price: "950" },
+      { id: 22, name: "হানিনাট ১ কেজি", img: "https://i.ibb.co.com/5hG68Tzq/image.jpg", price: "1250" },
+      { id: 23, name: "হানিনাট ৫০০ গ্রাম", img: "https://i.ibb.co.com/FbhxyCSh/image.jpg", price: "650" },
+      { id: 24, name: "হানিনাট ২৫০ গ্রাম", img: "https://i.ibb.co.com/RpLxk5Sc/image.jpg", price: "350" },
+      { id: 25, name: "আজওয়া খেজুর", img: "https://i.ibb.co.com/PzWz7m2m/image.jpg", price: "900" },
+      { id: 26, name: "আজওয়া প্রিমিয়াম", img: "https://i.ibb.co.com/0R9XGvWz/image.jpg", price: "1200" },
+      { id: 27, name: "মরিয়ম খেজুর", img: "https://i.ibb.co.com/yFzN8Q8z/image.jpg", price: "850" },
+      { id: 28, name: "কম্বো ১ (২৫০ গ্রাম)", img: "https://i.ibb.co.com/Lz9XGvWz/image.jpg", price: "2500" },
+      { id: 29, name: "কম্বো ২ (২৫০ গ্রাম)", img: "https://i.ibb.co.com/Rz9XGvWz/image.jpg", price: "2800" },
+      { id: 30, name: "কম্বো ৩ (২৫০ গ্রাম)", img: "https://i.ibb.co.com/Tz9XGvWz/image.jpg", price: "3500" }
     ];
 
     const grid = document.getElementById('main-product-grid');
     products.forEach(p => {
       grid.innerHTML += `
         <div class="product-card">
-          <div class="badge-container"><span class="discount-badge">SAVE</span><span class="hot-badge">HOT</span></div>
+          <div class="badge-container">
+            <span class="discount-badge">SAVE</span>
+            <span class="hot-badge">HOT</span>
+          </div>
           <div class="img-box">
              <a href="product-details.html?id=${p.id}"><img src="${p.img}" alt="${p.name}"></a>
           </div>
